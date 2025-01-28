@@ -6,5 +6,6 @@
 ###### Cualquier atributo compuesto(multievaluados) -> tabla (como las direcciones o email), esto ocurre al normalizar. Mejor representarlo en el diagrama como tabla desde el inicio.
 ###### N:M -> Nueva tabla.
 ###### 1:N -> La N arrastra la PK de la otra tabla. No se crea nueva tabla, se añade el nuevo atributo para la relación.
+###### Valor de dominio -> diferentes valores posibles pero solo 1 (ejemplo: sexo).
 
 </div>
