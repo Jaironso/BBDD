@@ -70,14 +70,8 @@
 <details>
 <summary> Respuesta </summary>
 <br>
- | ID_Pedido | Cliente   | Dirección       | Producto     | Cantidad | Precio |
-|----------|----------|---------------|-------------|----------|--------|
-| 101      | Juan Pérez | Calle 123     | Laptop      | 1        | 1000   |
-| 102      | Ana López | Av. Central   | Teclado     | 2        | 50     |
-  <div align="center">
-  ( imagen aquí 🖼) 
-  </div>
 </details>
+
 ---
 
 ## **Ejercicio 3: Registro de Empleados**
