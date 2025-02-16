@@ -43,7 +43,7 @@
 | 2          | Accesorios  |
 
   <div align="center">
-    <img src=/Images/Normalizacion1.drawio.png
+    <img src=Images/Normalizacion1.drawio.png
   </div>
 </details>
 
