@@ -1,5 +1,6 @@
 <div align="justify">
 
+#### **Nombre: Jairo Afonso Armas | Curso: 2ºDAW Semipresencial | Asignatura: Bases de Datos** 
 
 # Ejercicios de Normalización de Bases de Datos (1FN y 2FN)
 
