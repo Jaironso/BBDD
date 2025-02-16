@@ -43,7 +43,7 @@
 | 2          | Accesorios  |
 
   <div align="center">
-  ( imagen aquí 🖼) 
+    <img src=/Images/Normalizacion1.drawio.png
   </div>
 </details>
 
