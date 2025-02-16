@@ -43,6 +43,7 @@
 | 2          | Accesorios  |
 
 ### **Entidad Relación:**
+</br>
   <div align="center">
     <img src=Images/Normalizacion1.drawio.png
   </div>
