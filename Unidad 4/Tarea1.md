@@ -23,7 +23,7 @@
 > Verifica generando el modelo Entidad/Relación
 
 <details>
-<summary><n> Respuesta </n></summary>
+**<summary>Respuesta</summary>**
 <br>
 
 | ID_Proveedor | Nombre       | ID_Producto |
