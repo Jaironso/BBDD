@@ -26,16 +26,24 @@
 <summary>Respuesta</summary>
 <br>
 
+**Tabla Proveedor**
+
 | ID_Proveedor | Nombre       | ID_Producto |
 |------------|----------------|----------------|
 | 1          | Dell           | 1
 | 2          | HP             | 1
-| 3          | Logitech       | 2
+| 3          | Logitech       | 2 |
+
+
+**Tabla Producto**
 
 | ID_Producto | Nombre        | Precio | ID_Categoria |
 |------------|----------------|--------|--------------|
 | 1          | Laptop         | 1000   | 1            |
 | 2          | Mouse          | 25     | 2            |
+
+
+**Tabla Categoria**
 
 | ID_Categoria | Nombre  |
 |------------|----------------|
