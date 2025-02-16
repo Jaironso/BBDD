@@ -69,6 +69,7 @@
 
 <details>
 <summary> Respuesta </summary>
+<br>
 
 **Tabla Pedido**
 
