@@ -26,21 +26,21 @@
 <summary> Respuesta </summary>
 <br>
 
-| ID_Proveedor | Proveedor  |
+| ID_Proveedor | Nombre  |
 |------------|----------------|
 | 1          | Dell           |
 | 2          | HP             |
 | 3          | Logitech       |
 
-| ID_Producto | Producto  |  Precio |
-|------------|----------------|----------------|
+| ID_Producto | Nombre  |  Precio |
+|------------|----------------|------|
 | 1          | Laptop        | 1000   |
 | 2          | Mouse         | 25 |
 
-| ID_Categoria | Categoria  |
+| ID_Categoria | Nombre  |
 |------------|----------------|
-| 1          | Tecnologia          |
-| 2          | Accesorios           |
+| 1          | Tecnologia |
+| 2          | Accesorios  |
 
   <div align="center">
   ( imagen aquí 🖼) 
