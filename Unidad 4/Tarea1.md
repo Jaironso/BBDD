@@ -107,7 +107,6 @@
 | 1          | Calle 123 |
 | 2          | Av. Central |
 
-<br>
     <div align="center">
     <img src=Images/Normalizacion2.drawio.png
   </div>
