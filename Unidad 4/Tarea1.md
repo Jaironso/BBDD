@@ -25,7 +25,7 @@
 <summary> Respuesta </summary>
 <br>
 
-| ID_Proveedor | Proveedores  |
+| ID_Proveedor | Proveedor  |
 |------------|----------------|
 | 1          | Dell           |
 | 2          | HP             |
