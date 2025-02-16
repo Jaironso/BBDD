@@ -42,6 +42,7 @@
 | 1          | Tecnologia |
 | 2          | Accesorios  |
 
+### **Entidad Relación: **
   <div align="center">
     <img src=Images/Normalizacion1.drawio.png
   </div>
