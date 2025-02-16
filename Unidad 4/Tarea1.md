@@ -32,6 +32,16 @@
 | 2          | HP             |
 | 3          | Logitech       |
 
+| ID_Producto | Producto  |  Precio |
+|------------|----------------|----------------|
+| 1          | Laptop        | 1000   |
+| 2          | Mouse         | 25 |
+
+| ID_Categoria | Categoria  |
+|------------|----------------|
+| 1          | Tecnologia          |
+| 2          | Accesorios           |
+
   <div align="center">
   ( imagen aquí 🖼) 
   </div>
