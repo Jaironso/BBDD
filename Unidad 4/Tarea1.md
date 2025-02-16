@@ -23,7 +23,7 @@
 > Verifica generando el modelo Entidad/Relación
 
 <details>
-**<summary>Respuesta</summary>**
+<summary>Respuesta</summary>
 <br>
 
 | ID_Proveedor | Nombre       | ID_Producto |
@@ -56,8 +56,8 @@
 ### **Tabla Inicial: Pedidos**
 
 | ID_Pedido | Cliente   | Dirección       | Producto     | Cantidad | Precio |
-|----------|----------|---------------|-------------|----------|--------|
-| 101      | Juan Pérez | Calle 123     | Laptop      | 1        | 1000   |
+|----------|----------|---------------|--------------|-----------|--------|
+| 101      | Juan Pérez | Calle 123     | Laptop     | 1       | 1000   |
 | 102      | Ana López | Av. Central   | Teclado     | 2        | 50     |
 
 ### **Tareas:**
@@ -69,8 +69,41 @@
 
 <details>
 <summary> Respuesta </summary>
+
+**Tabla Pedido**
+
+| ID_Pedido | ID_Cliente | ID_Producto  | Cantidad |
+|------|------|--------|-----|
+| 101      |1  | 1     | 1   | 
+| 102      |2  | 2    | 2    |
+
+**Tabla Producto**
+
+| ID_Producto | Producto | Precio |
+|----------|----------|---------------|
+| 1    | Laptop         | 1000   |
+| 2    | Teclado     | 50     |
+
+**Tabla Cliente**
+
+| ID_Cliente | Cliente |
+|--------|----------|
+| 1      | Juan Pérez   |
+| 2      | Ana López  | 
+
+**Tabla Direccion**
+
+| ID_Cliente | Direccion |
+|------------|-----------|
+| 1          | Calle 123 |
+| 2          | Av. Central |
+
 <br>
+    <div align="center">
+    <img src=Images/Normalizacion2.drawio.png
+  </div>
 </details>
+
 
 ---
 
