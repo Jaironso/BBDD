@@ -121,7 +121,6 @@
   </div>
 </details>
 
-
 ---
 
 ## **Ejercicio 3: Registro de Empleados**
@@ -167,13 +166,13 @@
 | 2          | Finanzas |
 
 
-
 ### **Entidad Relación:**
 
   <div align="center">
     <img src=Images/Normalizacion3.drawio.png>
   </div>
 </details>
+
 ---
 
 ## **Ejercicio 4: Reservas de Hotel**
