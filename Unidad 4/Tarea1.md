@@ -140,6 +140,40 @@
 
 > Verifica generando el modelo Entidad/Relación
 
+<details>
+<summary>Respuesta</summary>
+<br>
+
+**Tabla Empleado**
+
+| ID_Empleado | Nombre    | ID_Dpto|
+|------------|------------|--------|
+| 1          | Carlos R.  | 1      |
+| 2          | Laura M.   | 2      |
+
+**Tabla Teléfono**
+
+| Telefono | ID_Empleado |       
+|------------|-------------|
+| 12345      |  1          |
+| 67890      | 1           | 
+| 54321      | 2           |
+
+**Tabla Departamento**
+
+| ID_Dpto | Nombre     |
+|------------|---------|
+| 1          | Ventas  | 
+| 2          | Finanzas |
+
+
+
+### **Entidad Relación:**
+
+  <div align="center">
+    <img src=Images/Normalizacion3.drawio.png>
+  </div>
+</details>
 ---
 
 ## **Ejercicio 4: Reservas de Hotel**
