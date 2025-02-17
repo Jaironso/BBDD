@@ -252,6 +252,54 @@
 
 > Verifica generando el modelo Entidad/Relación
 
+<details>
+<summary>Respuesta</summary>
+<br>
+
+**Tabla Inscripción**
+
+| ID_Inscripcion | ID_Estudiante    | ID_Curso
+|------------|------------|-------|
+| 3001        | 1  | 1
+| 3002        | 2   | 2
+
+**Tabla Estudiante**
+
+| ID_Estudiante | Nombre |       
+|------------|----------|
+| 1          | Luis R.   |
+| 2          | Ana S.   | 
+
+**Tabla Profesor**
+
+| ID_Profesor | Nombre |       
+|------------|----------|
+| 1          | Prof. Pérez  |
+| 2          | Prof. Gómez  | 
+
+
+**Tabla Curso**
+
+| ID_Curso | Nombre     |
+|------------|---------|
+| 1          | Matematicas  | 
+| 2          | Fisica |
+
+**Tabla Horarios**
+
+| Horario | ID_Curso  |
+|------------|---------|
+| Lunes 10AM    | 1 | 
+| Miercoles 2PM |1 |
+| Martes 3PM | 2  |
+
+### **Entidad Relación:**
+
+  <div align="center">
+    <img src=Images/Normalizacion5.drawio.png>
+  </div>
+</details>
+
 ---
 
 ## **Ejercicio 6: Ventas de Tienda**
