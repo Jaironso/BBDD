@@ -498,7 +498,7 @@
 <summary>Respuesta</summary>
 <br>
 
-**Tabla Facturas**
+**Tabla Vehículo**
 
 | ID_Vehiculo | Marca | 
 |------------|--------|
