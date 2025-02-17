@@ -81,21 +81,29 @@
 
 **Tabla Pedido**
 
-| ID_Pedido | ID_Cliente | ID_Producto  | Cantidad |
-|------|------|--------|-----|
-| 101      |1  | 1     | 1   | 
-| 102      |2  | 2    | 2    |
+| ID_Pedido | ID_Cliente | ID_Producto
+|------|------|--------|
+| 101 |1  | 1    |
+| 102 |2  | 2    |
 
 **Tabla Producto**
 
-| ID_Producto | Producto | Precio |
-|----------|----------|---------------|
-| 1    | Laptop         | 1000   |
-| 2    | Teclado     | 50     |
+| ID_Producto | Nombre | Precio |
+|----|----------|-------|
+| 1    | Laptop| 1000   |
+| 2    | Teclado  | 50     |
+
+**Tabla Detalle Pedido**
+
+| ID_Pedido | ID_Producto | Cantidad
+|------|---|--------|
+| 101  |1  | 1     |
+| 102  |2  | 2    |
+
 
 **Tabla Cliente**
 
-| ID_Cliente | Cliente |
+| ID_Cliente | Nombre |
 |--------|----------|
 | 1      | Juan Pérez   |
 | 2      | Ana López  | 
