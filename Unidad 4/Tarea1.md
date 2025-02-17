@@ -272,7 +272,7 @@
 
 **Tabla Profesor**
 
-| ID_Profesor | Nombre |       
+| ID_Profesor | Nombre | 
 |------------|----------|
 | 1          | Prof. Pérez  |
 | 2          | Prof. Gómez  | 
@@ -280,11 +280,11 @@
 
 **Tabla Curso**
 
-| ID_Curso | Nombre     |
-|------------|---------|
-| 1          | Matematicas  | 
-| 2          | Fisica |
-
+| ID_Curso | Nombre     | ID_Profesor |
+|------------|----------|------------|
+| 1          | Matematicas  | 1 |
+| 2          | Fisica       | 2 |
+ 
 **Tabla Horarios**
 
 | Horario | ID_Curso  |
@@ -318,6 +318,47 @@
 
 > Verifica generando el modelo Entidad/Relación
 
+<details>
+<summary>Respuesta</summary>
+<br>
+
+**Tabla Venta**
+
+| ID_Venta   | ID_Producto | Total  |
+|------------|------------|---------|
+| 8001       | 1          |   500   |
+| 8002       | 2          |   1000  |
+
+**Tabla Producto**
+
+| ID_Producto | Nombre    | Precio
+|------------|------------|-------|
+| 1         | Celular     |  480  |
+| 2         | Funda       |   20  |
+| 3         | Laptop      | 1000  |
+
+**Tabla Producto/Venta**
+
+| ID_Producto |ID_Venta   |
+|------------|------------|
+| 1         | 8001     |
+| 2         | 8001     | 
+| 3         | 8002     |
+
+**Tabla Cliente**
+
+| ID_Cliente | Nombre     |
+|------------|------------|
+| 1          | Juan P.    |
+| 2          | Andrea M.  |
+
+### **Entidad Relación:**
+
+  <div align="center">
+    <img src=Images/Normalizacion6.drawio.png>
+  </div>
+</details>
+
 ---
 
 ## **Ejercicio 7: Biblioteca de Libros**
@@ -335,6 +376,46 @@
 2. Aplicar **2FN**, asegurando que cada atributo dependa completamente de la clave primaria.
 
 > Verifica generando el modelo Entidad/Relación
+
+<details>
+<summary>Respuesta</summary>
+<br>
+
+**Tabla Libro**
+
+| ID_Libro   | Título     |
+|------------|------------|
+| 101        | El Quijote |
+| 102        | 1984       |
+
+**Tabla Autor**
+
+| ID_Autor  | Nombre     | 
+|-----------|------------|
+| 1         | Cervantes  |
+| 2         | Orwell     |
+
+**Tabla Libro/Autor**
+
+| ID_Libro  | ID_Autor   | 
+|-----------|------------|
+| 101       | 1          |
+| 102       | 2          |
+
+**Tabla Género**
+
+| ID_Genero |Nombre           |
+|-----------|-----------------|
+| 1         | Novela          |
+| 2         | Ciencia Ficcion | 
+
+
+### **Entidad Relación:**
+
+  <div align="center">
+    <img src=Images/Normalizacion7.drawio.png>
+  </div>
+</details>
 
 ---
 
@@ -354,13 +435,54 @@
 
 > Verifica generando el modelo Entidad/Relación
 
+<details>
+<summary>Respuesta</summary>
+<br>
+
+**Tabla Facturas**
+
+| ID_Factura | ID_Cliente | Costo Total |
+|------------|------------|-------------|
+| 9001       | 1          | 50          |
+| 9002       | 2          | 20          |
+
+**Tabla Servicio**
+
+| ID_Servicio| Nombre      | Coste
+|-----------|-------------|------|
+| 1         | Internet     |  25  |
+| 2         | TV           |  25  |
+| 3         | Telefono     |  20  |
+
+**Tabla Factura/Servicio**
+
+|ID_Factura | ID_Servicio|
+|-----------|-------------|
+|9001        | 1         |
+|9001        | 2         |
+|9002        | 3         | 
+
+**Tabla Cliente**
+
+| ID_Cliente| Nombre     | 
+|-----------|------------|
+| 1         | Juan P.    |
+| 2         | Ana M.     |
+
+### **Entidad Relación:**
+
+  <div align="center">
+    <img src=Images/Normalizacion8.drawio.png>
+  </div>
+</details>
+
 ---
 
 ## **Ejercicio 9: Gestión de Vehículos**
 
 ### **Tabla Inicial: Vehículos**
 
-| ID_Vehículo | Marca   | Modelos          | Año |
+| ID_Vehículo | Marca   | Modelos      | Año |
 |------------|--------|----------------|-----|
 | 5001       | Toyota  | Corolla, Yaris  | 2022 |
 | 5002       | Honda   | Civic          | 2023 |
@@ -372,13 +494,46 @@
 
 > Verifica generando el modelo Entidad/Relación
 
+<details>
+<summary>Respuesta</summary>
+<br>
+
+**Tabla Facturas**
+
+| ID_Vehiculo | Marca | 
+|------------|--------|
+| 5001       | Toyota | 
+| 5002       | Honda  |
+
+**Tabla Modelo**
+
+| ID_Modelo | Nombre      | ID_Vehiculo|
+|-----------|-------------|------------|
+| 1         | Corolla     | 5001       |
+| 2         | Yaris       | 5001       |
+| 3         | Civic       | 5002       |
+
+**Tabla Año**
+
+| Anio      | ID_Vehiculo | 
+|-----------|-------------|
+| 2022      | 5001        | 
+| 2023      | 5002        |
+
+### **Entidad Relación:**
+
+  <div align="center">
+    <img src=Images/Normalizacion9.drawio.png>
+  </div>
+</details>
+
 ---
 
 ## **Ejercicio 10: Gestión de Proyectos**
 
 ### **Tabla Inicial: Proyectos**
 
-| ID_Proyecto | Nombre       | Miembros        | Presupuesto |
+| ID_Proyecto | Nombre       | Miembros     | Presupuesto |
 |------------|-------------|----------------|------------|
 | 7001       | Web App     | Juan, Ana      | 5000       |
 | 7002       | E-commerce  | Pedro, María   | 10000      |
@@ -389,5 +544,42 @@
 2. Aplicar **2FN**, asegurando que cada atributo dependa completamente de la clave primaria.
 
 > Verifica generando el modelo Entidad/Relación
+
+<details>
+<summary>Respuesta</summary>
+<br>
+
+**Tabla Proyectos**
+
+| ID_Proyecto| Nombre    | Presupuesto |
+|------------|-----------|-------------|
+| 7001       | Web App   | 5000        |
+| 7002       | E-Commerce| 10000       |
+
+**Tabla Miembros**
+
+| ID_Miembro| Nombre      |
+|-----------|-------------|
+| 1         | Juan        |
+| 2         | Ana         |
+| 3         | Pedro       | 
+| 4         | Maria       |
+
+**Tabla Proyecto/Miembro**
+
+| ID_Miembro| ID_Proyecto |
+|-----------|-------------|
+| 1         | 7001        |
+| 2         | 7001        |
+| 3         | 7002        | 
+| 4         | 7002        |
+
+### **Entidad Relación:**
+
+  <div align="center">
+    <img src=Images/Normalizacion10.drawio.png>
+  </div>
+</details>
+
 
  </div>
