@@ -191,6 +191,49 @@
 
 > Verifica generando el modelo Entidad/Relación
 
+<details>
+<summary>Respuesta</summary>
+<br>
+
+**Tabla Reserva**
+
+| ID_Reserva | ID_Cliente | ID_Habitacion| Precio|
+|------------|----------|----------------|-------|
+| 5001       | 1        | 1              | 300   |
+| 5002       | 2        | 2              | 200   |
+
+**Tabla Fechas**
+
+| ID_Reserva | Fecha|
+|---------|--------|
+| 5001    | 01/02 |
+| 5001    | 02/02 |
+| 5001    | 03/02 |
+| 5002    | 10/03 |
+| 5002    | 11/03 |
+
+**Tabla Habitacion**
+
+| ID_Habitacion | Precio |       
+|------------|-----------|
+| 101        |  100      |
+| 102        |  100      | 
+
+**Tabla Cliente**
+
+| ID_Cliente | Nombre  |
+|------------|---------|
+| 1          | Carlos R. | 
+| 2          | Laura M. |
+
+
+### **Entidad Relación:**
+
+  <div align="center">
+    <img src=Images/Normalizacion4.drawio.png>
+  </div>
+</details>
+
 ---
 
 ## **Ejercicio 5: Inscripciones a Cursos**
