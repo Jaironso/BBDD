@@ -409,6 +409,13 @@
 | 1         | Novela          |
 | 2         | Ciencia Ficcion | 
 
+**Tabla Libro/Género**
+
+| ID_Libro  | ID_Genero   | 
+|-----------|------------|
+| 101       | 1          |
+| 102       | 2          |
+
 
 ### **Entidad Relación:**
 
