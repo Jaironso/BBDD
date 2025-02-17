@@ -500,7 +500,7 @@
 
 **Tabla Vehículo**
 
-| ID_Vehiculo | Marca | 
+| ID_Vehiculo | Marca |  
 |------------|--------|
 | 5001       | Toyota | 
 | 5002       | Honda  |
