@@ -441,7 +441,7 @@
 
 **Tabla Facturas**
 
-| ID_Factura | ID_Cliente | Costo Total |
+| ID_Factura | ID_Cliente | Costo_Total |
 |------------|------------|-------------|
 | 9001       | 1          | 50          |
 | 9002       | 2          | 20          |
