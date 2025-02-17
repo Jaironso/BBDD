@@ -100,7 +100,6 @@
 | 101  |1  | 1     |
 | 102  |2  | 2    |
 
-
 **Tabla Cliente**
 
 | ID_Cliente | Nombre |
@@ -114,6 +113,8 @@
 |------------|-----------|
 | 1          | Calle 123 |
 | 2          | Av. Central |
+
+### **Entidad Relación:**
 
   <div align="center">
     <img src=Images/Normalizacion2.drawio.png
