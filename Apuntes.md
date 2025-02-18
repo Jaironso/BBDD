@@ -11,5 +11,7 @@
 ###### Corregir el de vehiculo jerarquica todos los atributos en vehiculos ya que son los mismos para todos, hacer tabla para cada tipo y añadir una especifica a cada uno.
 ###### Jerarquias: Arco exclusivo, sin arco no.
 ###### Ejercicio equipos de futbol correciones: Gol tiene que tener id, las PK que se llamen igual en todas las tablas, las flechas mas claras, que no coincidan, las PK en negrito y que se vean las primeras en el ER
+##### Modelo examen: atributo con discontinua = atributo que se calcula de otra cosa. PINTAR tablas N:M de otro color.
+
 
 </div>
