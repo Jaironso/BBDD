@@ -93,7 +93,7 @@
 | 1    | Laptop| 1000   |
 | 2    | Teclado  | 25     |
 
-**Tabla Detalle Pedido**
+**Tabla Detalle Pedido (Pedido + Producto + Q)**
 
 | ID_Pedido | ID_Producto | Cantidad
 |------|---|--------|
