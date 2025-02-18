@@ -91,7 +91,7 @@
 | ID_Producto | Nombre | Precio |
 |----|----------|-------|
 | 1    | Laptop| 1000   |
-| 2    | Teclado  | 50     |
+| 2    | Teclado  | 25     |
 
 **Tabla Detalle Pedido**
 
