@@ -37,11 +37,11 @@ Transformamos los valores multivaluados en tablas con valores atómicos. En este
 
 **Tabla Direcciones** 
 
-| Ciudad       | Calle      | ClienteID |
-|--------------|------------|------------
-| Ciudad A     | Calle 1    | 101       |
-| Ciudad A     | Calle 2    | 101       |
-| Ciudad B     | Calle 3    | 102       |
+| Ciudad       | Calle      |
+|--------------|------------|
+| Ciudad A     | Calle 1    |
+| Ciudad A     | Calle 2    |
+| Ciudad B     | Calle 3    |
 
 
 </details>
@@ -82,11 +82,11 @@ Separamos todo aquello que no tiene relación directa con la clave principal (pr
 
 **Tabla Direcciones** 
 
-| Ciudad       | Calle      | ClienteID |
-|--------------|------------|------------
-| Ciudad A     | Calle 1    | 101       |
-| Ciudad A     | Calle 2    | 101       |
-| Ciudad B     | Calle 3    | 102       |
+| Ciudad       | Calle      |
+|--------------|------------|
+| Ciudad A     | Calle 1    |
+| Ciudad A     | Calle 2    |
+| Ciudad B     | Calle 3    |
 
 </details>
 
