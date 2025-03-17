@@ -1,4 +1,4 @@
-<div align="justify">
+-<div align="justify">
 
 #### **Nombre: Jairo Afonso Armas | Curso: 2ºDAW Semipresencial | Asignatura: Bases de Datos** 
 
@@ -136,6 +136,58 @@ Listar vehículos que pertenecen al propietario con ID 5.
 <br>
   <div align="center">
     <img src=images/Tarea2/Tarea2_Ejercicio3_10.PNG>
+  </div>
+</details>
+
+### Paso 4: Realiza los siguientes updates
+
+- Actualizar el nombre de un propietario con DNI "12345678A".
+
+<details>
+<summary>Respuesta</summary>
+<br>
+  <div align="center">
+    <img src=images/Tarea2/Tarea2_Ejercicio4_1.PNG>
+  </div>
+</details>
+
+- Modificar el año de un vehículo con ID 3 a 2022.
+
+<details>
+<summary>Respuesta</summary>
+<br>
+  <div align="center">
+    <img src=images/Tarea2/Tarea2_Ejercicio4_2.PNG>
+  </div>
+</details>
+
+- Cambiar el modelo de todos los vehículos Nissan a "Micra".
+
+<details>
+<summary>Respuesta</summary>
+<br>
+  <div align="center">
+    <img src=images/Tarea2/Tarea2_Ejercicio4_3.PNG>
+  </div>
+</details>
+
+- Actualizar el apellido de un propietario con ID 7 a "Gomez".
+
+<details>
+<summary>Respuesta</summary>
+<br>
+  <div align="center">
+    <img src=images/Tarea2/Tarea2_Ejercicio4_4.PNG>
+  </div>
+</details>
+
+- Modificar la marca de un vehículo con modelo "Fiesta" a "Renault".
+
+<details>
+<summary>Respuesta</summary>
+<br>
+  <div align="center">
+    <img src=images/Tarea2/Tarea2_Ejercicio4_5.PNG>
   </div>
 </details>
 
