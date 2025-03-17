@@ -45,7 +45,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea1/Tarea1_Ejercicio4.PNG>
+    <img src=images/Tarea1/Tarea1_Ejercicio4_1.PNG>
   </div>
 </details>
 
