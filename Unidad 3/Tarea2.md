@@ -51,7 +51,7 @@
 
 - Listar todos los vehículos.
 
-  <details>
+<details>
 <summary>Respuesta</summary>
 <br>
   <div align="center">
