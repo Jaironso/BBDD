@@ -55,7 +55,7 @@ Listar todos los vehículos.
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio3.PNG>
+    <img src=images/Tarea2/Tarea2_Ejercicio3_2.PNG>
   </div>
 </details>
 
@@ -65,7 +65,7 @@ Seleccionar solo los nombres y apellidos de los propietarios.
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio3.PNG>
+    <img src=images/Tarea2/Tarea2_Ejercicio3_3.PNG>
   </div>
 </details>
 
@@ -75,7 +75,7 @@ Listar todas las marcas y modelos de los vehículos.
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio3.PNG>
+    <img src=images/Tarea2/Tarea2_Ejercicio3_4.PNG>
   </div>
 </details>
 
@@ -85,7 +85,7 @@ Seleccionar solo los propietarios con apellido "Perez".
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio3.PNG>
+    <img src=images/Tarea2/Tarea2_Ejercicio3_5.PNG>
   </div>
 </details>
 
@@ -95,7 +95,7 @@ Listar todos los vehículos con año 2019.
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio3.PNG>
+    <img src=images/Tarea2/Tarea2_Ejercicio3_6.PNG>
   </div>
 </details>
 
@@ -105,7 +105,7 @@ Seleccionar propietarios que tienen vehículos de la marca "Toyota".
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio3.PNG>
+    <img src=images/Tarea2/Tarea2_Ejercicio3_7.PNG>
   </div>
 </details>
 
@@ -115,7 +115,7 @@ Listar vehículos con marca "Ford" y modelo "Fiesta".
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio3.PNG>
+    <img src=images/Tarea2/Tarea2_Ejercicio3_8.PNG>
   </div>
 </details>
 
@@ -125,7 +125,7 @@ Seleccionar propietarios con DNI "12345678A".
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio3.PNG>
+    <img src=images/Tarea2/Tarea2_Ejercicio3_9.PNG>
   </div>
 </details>
 
@@ -135,7 +135,7 @@ Listar vehículos que pertenecen al propietario con ID 5.
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio3.PNG>
+    <img src=images/Tarea2/Tarea2_Ejercicio3_10.PNG>
   </div>
 </details>
 
