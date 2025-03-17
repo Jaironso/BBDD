@@ -58,7 +58,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea3/Tarea3_Ejercicio3_5.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_4_2.PNG>
   </div>
 </details>
   
@@ -69,7 +69,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea3/Tarea3_Ejercicio3_6.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_5y6.PNG>
   </div>
 </details>
 
@@ -80,7 +80,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea3/Tarea3_Ejercicio3_7.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_5y6.PNG>
   </div>
 </details>
 
@@ -91,7 +91,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea3/Tarea3_Ejercicio3_8.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_7.PNG>
   </div>
 </details>
 
@@ -102,7 +102,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea3/Tarea3_Ejercicio3_9.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_8.PNG>
   </div>
 </details>
 
@@ -113,7 +113,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea3/Tarea3_Ejercicio3_10.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_9.PNG>
   </div>
 </details>
 
@@ -124,7 +124,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea3/Tarea3_Ejercicio3_11.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_10.PNG>
   </div>
 </details>
 
@@ -135,7 +135,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_11.PNG>
   </div>
 </details>
 
@@ -146,7 +146,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_12.PNG>
   </div>
 </details>
 
@@ -157,7 +157,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_13.PNG>
   </div>
 </details>
 
@@ -168,7 +168,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_14.PNG>
   </div>
 </details>
 
@@ -180,7 +180,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE1.PNG>
   </div>
 </details>
 
@@ -190,7 +190,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE2.PNG>
   </div>
 </details>
 
@@ -200,7 +200,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE3.PNG>
   </div>
 </details>
 
@@ -210,7 +210,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE4.PNG>
   </div>
 </details>
 
@@ -220,7 +220,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE5.PNG>
   </div>
 </details>
 
@@ -230,7 +230,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE6.PNG>
   </div>
 </details>
 
@@ -240,7 +240,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE7.PNG>
   </div>
 </details>
 
@@ -250,7 +250,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE8.PNG>
   </div>
 </details>
 
@@ -260,7 +260,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE9.PNG>
   </div>
 </details>
 
@@ -270,7 +270,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea2/Tarea2_Ejercicio2.PNG>
+    <img src=images/Tarea3/Tarea3_Ejercicio3_ORDERLIKE10.PNG>
   </div>
 </details>
 
