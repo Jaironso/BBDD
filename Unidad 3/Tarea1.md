@@ -9,7 +9,9 @@
 <details>
 <summary>Respuesta</summary>
 <br>
-Hola!!
+  <div align="center">
+    <img src=Images/Tarea1/Tarea1_Ejercicio1.PNG>
+  </div>
 </details>
 
 </div>
