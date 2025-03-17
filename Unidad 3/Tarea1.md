@@ -10,7 +10,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=Images/Tarea1/Tarea1_Ejercicio1.PNG>
+    <img src=images/Tarea1/Tarea1_Ejercicio1.PNG>
   </div>
 </details>
 
