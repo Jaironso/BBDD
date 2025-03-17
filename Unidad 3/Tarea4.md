@@ -215,6 +215,7 @@ Realiza las siguientes consultas, y muestra el resultado obtenido:
     <img src=images/Tarea4/Tarea4_Ejercicio4_20.PNG>
   </div>
 </details>
+
 - Encontrar la cantidad total de productos en cada categoría.
 
 <details>
