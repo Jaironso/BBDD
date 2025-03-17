@@ -39,7 +39,7 @@
 
 ### Paso 3: Realizar las siguientes 10 consultas de datos
 
-Seleccionar todos los propietarios
+- Seleccionar todos los propietarios
 
 <details>
 <summary>Respuesta</summary>
@@ -49,7 +49,7 @@ Seleccionar todos los propietarios
   </div>
 </details>
 
-Listar todos los vehículos.
+- Listar todos los vehículos.
 
   <details>
 <summary>Respuesta</summary>
@@ -59,7 +59,7 @@ Listar todos los vehículos.
   </div>
 </details>
 
-Seleccionar solo los nombres y apellidos de los propietarios.
+- Seleccionar solo los nombres y apellidos de los propietarios.
 
 <details>
 <summary>Respuesta</summary>
@@ -69,7 +69,7 @@ Seleccionar solo los nombres y apellidos de los propietarios.
   </div>
 </details>
 
-Listar todas las marcas y modelos de los vehículos.
+- Listar todas las marcas y modelos de los vehículos.
 
 <details>
 <summary>Respuesta</summary>
@@ -79,7 +79,7 @@ Listar todas las marcas y modelos de los vehículos.
   </div>
 </details>
 
-Seleccionar solo los propietarios con apellido "Perez".
+- Seleccionar solo los propietarios con apellido "Perez".
 
 <details>
 <summary>Respuesta</summary>
@@ -89,7 +89,7 @@ Seleccionar solo los propietarios con apellido "Perez".
   </div>
 </details>
 
-Listar todos los vehículos con año 2019.
+- Listar todos los vehículos con año 2019.
 
 <details>
 <summary>Respuesta</summary>
@@ -99,7 +99,7 @@ Listar todos los vehículos con año 2019.
   </div>
 </details>
 
-Seleccionar propietarios que tienen vehículos de la marca "Toyota".
+- Seleccionar propietarios que tienen vehículos de la marca "Toyota".
 
 <details>
 <summary>Respuesta</summary>
@@ -109,7 +109,7 @@ Seleccionar propietarios que tienen vehículos de la marca "Toyota".
   </div>
 </details>
 
-Listar vehículos con marca "Ford" y modelo "Fiesta".
+- Listar vehículos con marca "Ford" y modelo "Fiesta".
 
 <details>
 <summary>Respuesta</summary>
@@ -119,7 +119,7 @@ Listar vehículos con marca "Ford" y modelo "Fiesta".
   </div>
 </details>
 
-Seleccionar propietarios con DNI "12345678A".
+- Seleccionar propietarios con DNI "12345678A".
 
 <details>
 <summary>Respuesta</summary>
@@ -129,7 +129,7 @@ Seleccionar propietarios con DNI "12345678A".
   </div>
 </details>
 
-Listar vehículos que pertenecen al propietario con ID 5.
+- Listar vehículos que pertenecen al propietario con ID 5.
 
 <details>
 <summary>Respuesta</summary>
