@@ -19,7 +19,46 @@
 </details>
 
 - Realiza el diagrama __MR__ de la __BBDD__ supermercado.
+
+<details>
+<summary>Respuesta</summary>
+<br>
+  <div align="center">
+    
+    **Tabla Productos**
+    
+    | ID         | Nombre         | Categoria   | Precio |
+    |------------|----------------|-------------|--------|
+    | 1          | Arroz          | Aliemntos   | 2.5    |
+    | 2          | Leche          | Lácteos     | 1.8    |
+    | 3          | Pan            | Manzanas    | 1.2    |
+
+    .............. ETC.
+    
+    
+    **Tabla Ventas**
+    
+    | ID         |  ID_Producto   |Cantidad   | fecha     |
+    |------------|----------------|-----------|-----------|
+    | 1          | 1              | 5         | 2024-01-17|
+    | 2          | 2              | 3         | 2024-01-17|
+    | 3          | 4              | 2         | 2024-01-17|
+
+    ................ETC.
+    
+  </div>
+</details>
+
+
 - Indica si la BBDD esta __normalizada__ hasta la 3ª forma normal, justificando la respuesta.
+
+<details>
+<summary>Respuesta</summary>
+<br>
+  
+No, por ejemplo, el atributo "categoria" de la tabla productos, podria tener su propia tabla, lo mismo ocurre con el atributo "fecha" en la tabla ventas.
+
+</details>
 
 ### Paso 4: Responde a las siguientes cuestiones.
 
