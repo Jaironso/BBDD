@@ -9,6 +9,15 @@
 ### Paso 3: Responde a las siguientes cuestiones
 
 - Realiza el diagrama __ER__ de la __BBDD__ supermercado.
+
+<details>
+<summary>Respuesta</summary>
+<br>
+  <div align="center">
+    <img src=images/Tarea4/Tarea4SUPER.drawio.png>
+  </div>
+</details>
+
 - Realiza el diagrama __MR__ de la __BBDD__ supermercado.
 - Indica si la BBDD esta __normalizada__ hasta la 3ª forma normal, justificando la respuesta.
 
