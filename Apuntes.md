@@ -13,5 +13,28 @@
 ###### Ejercicio equipos de futbol correciones: Gol tiene que tener id, las PK que se llamen igual en todas las tablas, las flechas mas claras, que no coincidan, las PK en negrito y que se vean las primeras en el ER
 ##### Modelo examen: atributo con discontinua = atributo que se calcula de otra cosa. PINTAR tablas N:M de otro color.
 
+UNIDAD 3
+
+LIKE VS REGEX
+
+LIKE '%A' o 'Per%' o '%and%'
+REGEXP 'a$' o '^Per' o 'and'
+
+Mas ejemplos:
+regexp '^[P/p]erez'
+regexp '[0..9]{2}-[0..9]{2}-[0..9]{4}' -> FECHAS
+regexp '[0..9]{8}[a..z/A..Z]{1}' -> DNI
+regexp '[a..z/A..Z]{1}[0..9]{7}' -> NIE
+regexp '\w+@\w+.[a..z/A..Z]{2/3}' -> email
+
+regex mas rapido, no recorren todos los caracteres.
+
+Los + importantes:
+^
+$
+*
++
+\
+.
 
 </div>
