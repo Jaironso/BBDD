@@ -24,28 +24,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    
-    **Tabla Productos**
-    
-    | ID         | Nombre         | Categoria   | Precio |
-    |------------|----------------|-------------|--------|
-    | 1          | Arroz          | Aliemntos   | 2.5    |
-    | 2          | Leche          | Lácteos     | 1.8    |
-    | 3          | Pan            | Manzanas    | 1.2    |
-
-    .............. ETC.
-    
-    
-    **Tabla Ventas**
-    
-    | ID         |  ID_Producto   |Cantidad   | fecha     |
-    |------------|----------------|-----------|-----------|
-    | 1          | 1              | 5         | 2024-01-17|
-    | 2          | 2              | 3         | 2024-01-17|
-    | 3          | 4              | 2         | 2024-01-17|
-
-    ................ETC.
-    
+        <img src=images/Tarea4/Tarea4_2SUPER.drawio.png>  
   </div>
 </details>
 
