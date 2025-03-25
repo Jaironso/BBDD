@@ -11,7 +11,7 @@
 <summary>Respuesta</summary>
 <br>
   <div align="center">
-    <img src=images/Tarea4/Tarea4SUPER.drawio.png>
+    <img src=images/Tarea5/Tarea5_Ejercicio1.PNG>
   </div>
 </details>
 
