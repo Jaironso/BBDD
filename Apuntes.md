@@ -33,8 +33,18 @@ Los + importantes:
 ^
 $
 *
-+
++ (al menos una)
 \
 .
+() PARENTESIS -> GRUPOS.
+-- Obtener todos los autores cuyo nombre empieza con "M" o termina con "n":
+CORRECCION: '^[M|m]|[N|n]$';
+
+
+-- Obtener todos los autores cuyo nombre no contiene caracteres especiales:
+CORRECCION: '^[a-zA-Z ]*$'; (El espacio es pq el nombre puede contener espacios)
+
+
+SI quisieramos ambas opciones: .* (en medio)
 
 </div>
