@@ -7,15 +7,76 @@
 
 -- Obtener todos los clientes.
 
+<details>
+<summary>Respuesta</summary>
+  
+```
+select * from clientes;
+┌────┬─────────────────┬───────────────────────────┐
+│ id │     nombre      │           email           │
+├────┼─────────────────┼───────────────────────────┤
+│ 1  │ Juan Pérez      │ juan@example.com          │
+│ 2  │ María Gómez     │ maria@example.com         │
+│ 3  │ Carlos López    │ carlos@example.com        │
+│ 4  │ Ana Rodríguez   │ ana@example.com           │
+│ 5  │ Luisa Martínez  │ luisa@example.com         │
+│ 6  │ Pedro Sánchez   │ pedro@example.com         │
+│ 7  │ Laura García    │ laura@example.com         │
+│ 8  │ Miguel Martín   │ miguel@example.com        │
+│ 9  │ Elena González  │ elena@example.com         │
+│ 10 │ David Torres    │ david@example.com         │
+│ 11 │ Sofía Ruiz      │ sofia@example.com         │
+│ 12 │ Javier López    │ javier@example.com        │
+│ 13 │ Carmen Vargas   │ carmen@example.com        │
+│ 14 │ Daniel Muñoz    │ daniel@example.com        │
+│ 15 │ Isabel Serrano  │ isabel@example.com        │
+│ 16 │ Alejandro Muñoz │ alejandro@example.com     │
+│ 17 │ Raquel Herrera  │ raquel@example.com        │
+│ 18 │ Francisco Mora  │ francisco@example.com     │
+│ 19 │ Marina Díaz     │ marina@example.com        │
+│ 20 │ Antonio Jiménez │ antonio@example.com       │
+│ 21 │ Beatriz Romero  │ beatriz@example.com       │
+│ 22 │ Carlos Gómez    │ carlos.gomez@example.com  │
+│ 23 │ Clara Sánchez   │ clara.sanchez@example.com │
+│ 24 │ Andrés Martínez │ andres@example.com        │
+│ 25 │ Lucía Díaz      │ lucia@example.com         │
+│ 26 │ Mario Serrano   │ mario@example.com         │
+│ 27 │ Eva Torres      │ eva.torres@example.com    │
+│ 28 │ Roberto Ruiz    │ roberto@example.com       │
+│ 29 │ Celia García    │ celia@example.com         │
+└────┴─────────────────┴───────────────────────────┘
+```
+</details>
 
--- Obtener la cantidad total de productos en todos los 
+-- Obtener la cantidad total de productos en todos los pedidos.
 
+<details>
+<summary>Respuesta</summary>
+  
+```
+
+```
+</details>
 
 -- Obtener el precio promedio de los productos:
 
+<details>
+<summary>Respuesta</summary>
+  
+```
+
+```
+</details>
 
 -- Obtener los clientes que tienen un email válido (contiene '@'):
 
+<details>
+<summary>Respuesta</summary>
+  
+```
+
+```
+</details>
 
 -- Obtener el producto más caro.
 
