@@ -5,14 +5,31 @@
 ## **Unidad 3. Tarea 7: Lenguajes de definición/consulta y manipulación de información en Base de Datos.**
 
 -- Listar los coches vendidos con sus modelos y precios, junto con los nombres de los clientes que los compraron.
-  -- Cosas que debo de tener en cuenta:
-    -- ¿Qué me están pidiendo?. ¿Qué es lo que no me han pedido?
+-- Cosas que debo de tener en cuenta:
+-- ¿Qué me están pidiendo?. ¿Qué es lo que no me han pedido?
 
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select
+(select modelo from coches where coches.id_coche = ventas.id_coche) AS modelo,
+(select precio from coches where coches.id_coche = ventas.id_coche) AS precio,
+(select nombre from clientes where clientes.id_cliente = ventas.id_cliente) AS nombreCliente
+from ventas;
+┌────────────────┬─────────┬─────────────────┐
+│     modelo     │ precio  │  nombreCliente  │
+├────────────────┼─────────┼─────────────────┤
+│ Sedán 2022     │ 25000.0 │ Juan Pérez      │
+│ Hatchback 2021 │ 22000.0 │ María Gómez     │
+│ SUV 2023       │ 30000.0 │ Carlos López    │
+│ Coupé 2022     │ 28000.0 │ Ana Martínez    │
+│ Camioneta 2023 │ 32000.0 │ Pedro Rodríguez │
+│ Compacto 2021  │ 20000.0 │ Laura Sánchez   │
+│ Híbrido 2022   │ 27000.0 │ Miguel González │
+│ Deportivo 2023 │ 35000.0 │ Isabel Díaz     │
+│ Eléctrico 2021 │ 40000.0 │ Elena Torres    │
+└────────────────┴─────────┴─────────────────┘
 ```
 </details>
 
@@ -25,7 +42,19 @@
 <summary>Respuesta</summary>
   
 ```
-
+select id_cliente, nombre from clientes where id_cliente IN
+(select id_cliente from ventas where id_coche IN
+(select id_coche from coches where precio >
+(select AVG(precio) from coches where id_coche IN
+(select id_coche from ventas))));
+┌────────────┬─────────────────┐
+│ id_cliente │     nombre      │
+├────────────┼─────────────────┤
+│ 3          │ Carlos López    │
+│ 5          │ Pedro Rodríguez │
+│ 8          │ Isabel Díaz     │
+│ 10         │ Elena Torres    │
+└────────────┴─────────────────┘
 ```
 </details>
 
@@ -38,7 +67,14 @@
 <summary>Respuesta</summary>
   
 ```
-
+select id_coche, modelo, precio from coches where id_coche IN
+(select id_coche from coches where id_coche NOT IN
+(select id_coche from ventas));
+┌──────────┬─────────────┬─────────┐
+│ id_coche │   modelo    │ precio  │
+├──────────┼─────────────┼─────────┤
+│ 9        │ Pickup 2022 │ 31000.0 │
+└──────────┴─────────────┴─────────┘
 ```
 </details>
 
@@ -50,7 +86,13 @@
 <summary>Respuesta</summary>
   
 ```
-
+select SUM(precio) AS Total_Vendido from coches where id_coche IN
+(select id_coche from ventas);
+┌───────────────┐
+│ Total_Vendido │
+├───────────────┤
+│ 259000.0      │
+└───────────────┘
 ```
 </details>
 
@@ -63,7 +105,23 @@
 <summary>Respuesta</summary>
   
 ```
-
+select fecha_venta AS fecha_venta,
+(select modelo from coches where coches.id_coche = ventas.id_coche) AS Modelo_Coche,
+(select nombre from clientes where clientes.id_cliente = ventas.id_cliente) AS Nombre_Cliente
+from ventas ORDER BY fecha_venta DESC;
+┌─────────────┬────────────────┬─────────────────┐
+│ fecha_venta │  Modelo_Coche  │ Nombre_Cliente  │
+├─────────────┼────────────────┼─────────────────┤
+│ 2023-10-05  │ Eléctrico 2021 │ Elena Torres    │
+│ 2023-08-25  │ Deportivo 2023 │ Isabel Díaz     │
+│ 2023-07-20  │ Híbrido 2022   │ Miguel González │
+│ 2023-06-15  │ Compacto 2021  │ Laura Sánchez   │
+│ 2023-05-05  │ Camioneta 2023 │ Pedro Rodríguez │
+│ 2023-04-10  │ Coupé 2022     │ Ana Martínez    │
+│ 2023-03-25  │ SUV 2023       │ Carlos López    │
+│ 2023-02-20  │ Hatchback 2021 │ María Gómez     │
+│ 2023-01-15  │ Sedán 2022     │ Juan Pérez      │
+└─────────────┴────────────────┴─────────────────┘
 ```
 </details>
 
@@ -75,7 +133,13 @@
 <summary>Respuesta</summary>
   
 ```
-
+select modelo from coches where precio =
+(select MAX(precio) from coches);
+┌────────────────┐
+│     modelo     │
+├────────────────┤
+│ Eléctrico 2021 │
+└────────────────┘
 ```
 </details>
 
@@ -87,7 +151,21 @@
 <summary>Respuesta</summary>
   
 ```
-
+select nombre, COUNT(*) AS NumeroDeCompras from clientes WHERE id_cliente IN
+(select id_cliente from ventas) group by id_cliente;
+┌─────────────────┬─────────────────┐
+│     nombre      │ NumeroDeCompras │
+├─────────────────┼─────────────────┤
+│ Juan Pérez      │ 1               │
+│ María Gómez     │ 1               │
+│ Carlos López    │ 1               │
+│ Ana Martínez    │ 1               │
+│ Pedro Rodríguez │ 1               │
+│ Laura Sánchez   │ 1               │
+│ Miguel González │ 1               │
+│ Isabel Díaz     │ 1               │
+│ Elena Torres    │ 1               │
+└─────────────────┴─────────────────┘
 ```
 </details>
 
