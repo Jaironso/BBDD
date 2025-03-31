@@ -134,6 +134,7 @@ select nombre, MAX(precio) from productos;
 │ Laptop │ 1200.0      │
 └────────┴─────────────┘
 ```
+</details>
 
 -- Obtener los pedidos realizados en febrero de 2024.
 
@@ -177,6 +178,7 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 │ 29        │ 29         │ 29          │ 1        │ 2024-02-29   │
 └───────────┴────────────┴─────────────┴──────────┴──────────────┘
 ```
+</details>
 
 -- Obtener la cantidad total de productos en todos los pedidos por producto.
 
@@ -184,64 +186,199 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 <summary>Respuesta</summary>
   
 ```
-
+select pe.id_pedido, p.nombre, pe.cantidad from Pedidos pe JOIN Productos p ON pe.id_producto = p.id;
+┌───────────┬───────────────────────────────────┬──────────┐
+│ id_pedido │              nombre               │ cantidad │
+├───────────┼───────────────────────────────────┼──────────┤
+│ 1         │ Laptop                            │ 2        │
+│ 2         │ Smartphone                        │ 1        │
+│ 3         │ TV LED                            │ 3        │
+│ 4         │ Tablet                            │ 1        │
+│ 5         │ Auriculares Bluetooth             │ 2        │
+│ 6         │ Impresora                         │ 1        │
+│ 7         │ Cámara Digital                    │ 3        │
+│ 8         │ Reproductor de Audio              │ 2        │
+│ 9         │ Altavoces Inalámbricos            │ 1        │
+│ 10        │ Reloj Inteligente                 │ 2        │
+│ 11        │ Teclado Inalámbrico               │ 1        │
+│ 12        │ Ratón Óptico                      │ 3        │
+│ 13        │ Monitor LED                       │ 1        │
+│ 14        │ Mochila para Portátil             │ 2        │
+│ 15        │ Disco Duro Externo                │ 1        │
+│ 16        │ Router Wi-Fi                      │ 3        │
+│ 17        │ Lámpara LED                       │ 2        │
+│ 18        │ Batería Externa                   │ 1        │
+│ 19        │ Estuche para Auriculares          │ 2        │
+│ 20        │ Tarjeta de Memoria                │ 1        │
+│ 21        │ Cargador Inalámbrico              │ 3        │
+│ 22        │ Kit de Limpieza para Computadoras │ 1        │
+│ 23        │ Funda para Tablet                 │ 2        │
+│ 24        │ Soporte para Teléfono             │ 1        │
+│ 25        │ Hub USB                           │ 3        │
+│ 26        │ Webcam HD                         │ 2        │
+│ 27        │ Funda para Laptop                 │ 1        │
+│ 28        │ Adaptador HDMI                    │ 2        │
+└───────────┴───────────────────────────────────┴──────────┘
 ```
+</details>
 
 -- Obtener los clientes que han realizado más de un pedido.
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select c.nombre, COUNT(p.id_cliente) AS Q_Pedidos from Clientes c JOIN Pedidos p ON c.id  = p.id_cliente GROUP BY p.id_cliente HAVING COUNT(p.id_cliente) > 1;
+Respuesta: Ningún cliente realizó más de un pedido.
 ```
+</details>
 
 -- Obtener los productos que tienen un precio registrado.
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select nombre, precio from productos;
+┌───────────────────────────────────┬────────┐
+│              nombre               │ precio │
+├───────────────────────────────────┼────────┤
+│ Laptop                            │ 1200.0 │
+│ Smartphone                        │ 699.99 │
+│ TV LED                            │ 799.5  │
+│ Tablet                            │ 299.99 │
+│ Auriculares Bluetooth             │ 79.99  │
+│ Impresora                         │ 199.99 │
+│ Cámara Digital                    │ 499.99 │
+│ Reproductor de Audio              │ 149.99 │
+│ Altavoces Inalámbricos            │ 129.99 │
+│ Reloj Inteligente                 │ 249.99 │
+│ Teclado Inalámbrico               │ 59.99  │
+│ Ratón Óptico                      │ 29.99  │
+│ Monitor LED                       │ 349.99 │
+│ Mochila para Portátil             │ 49.99  │
+│ Disco Duro Externo                │ 89.99  │
+│ Router Wi-Fi                      │ 69.99  │
+│ Lámpara LED                       │ 39.99  │
+│ Batería Externa                   │ 19.99  │
+│ Estuche para Auriculares          │ 14.99  │
+│ Tarjeta de Memoria                │ 24.99  │
+│ Cargador Inalámbrico              │ 34.99  │
+│ Kit de Limpieza para Computadoras │ 9.99   │
+│ Funda para Tablet                 │ 19.99  │
+│ Soporte para Teléfono             │ 14.99  │
+│ Hub USB                           │ 29.99  │
+│ Webcam HD                         │ 59.99  │
+│ Funda para Laptop                 │ 29.99  │
+│ Adaptador HDMI                    │ 12.99  │
+└───────────────────────────────────┴────────┘
 ```
+</details>
 
 -- Obtener la fecha del primer pedido realizado:
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+sqlite> select id_pedido, MIN(fecha_pedido) from Pedidos;
+┌───────────┬───────────────────┐
+│ id_pedido │ MIN(fecha_pedido) │
+├───────────┼───────────────────┤
+│ 1         │ 2024-02-01        │
+└───────────┴───────────────────┘
+sqlite>
 ```
+</details>
 
 -- Obtener los productos cuyos nombres comienzan con 'A' o 'B':
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select nombre from productos where nombre REGEXP '^[Aa]|^[Bb]';
+┌────────────────────────┐
+│         nombre         │
+├────────────────────────┤
+│ Auriculares Bluetooth  │
+│ Altavoces Inalámbricos │
+│ Batería Externa        │
+│ Adaptador HDMI         │
+└────────────────────────┘
 ```
+</details>
 
 -- Obtener la cantidad total de productos en todos los pedidos por cliente ordenado por cliente.
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select c.nombre, pe.id_pedido, SUM(pe.cantidad) AS Q_total_productos from Pedidos pe JOIN Clientes c ON pe.id_cliente = c.id GROUP BY pe.id_pedido ORDER BY c.nombre;
+┌─────────────────┬───────────┬───────────────────┐
+│     nombre      │ id_pedido │ Q_total_productos │
+├─────────────────┼───────────┼───────────────────┤
+│ Alejandro Muñoz │ 16        │ 3                 │
+│ Ana Rodríguez   │ 4         │ 1                 │
+│ Andrés Martínez │ 24        │ 1                 │
+│ Antonio Jiménez │ 20        │ 1                 │
+│ Beatriz Romero  │ 21        │ 3                 │
+│ Carlos Gómez    │ 22        │ 1                 │
+│ Carlos López    │ 3         │ 3                 │
+│ Carmen Vargas   │ 13        │ 1                 │
+│ Celia García    │ 29        │ 1                 │
+│ Clara Sánchez   │ 23        │ 2                 │
+│ Daniel Muñoz    │ 14        │ 2                 │
+│ David Torres    │ 10        │ 2                 │
+│ Elena González  │ 9         │ 1                 │
+│ Eva Torres      │ 27        │ 1                 │
+│ Francisco Mora  │ 18        │ 1                 │
+│ Isabel Serrano  │ 15        │ 1                 │
+│ Javier López    │ 12        │ 3                 │
+│ Juan Pérez      │ 1         │ 2                 │
+│ Laura García    │ 7         │ 3                 │
+│ Lucía Díaz      │ 25        │ 3                 │
+│ Luisa Martínez  │ 5         │ 2                 │
+│ Marina Díaz     │ 19        │ 2                 │
+│ Mario Serrano   │ 26        │ 2                 │
+│ María Gómez     │ 2         │ 1                 │
+│ Miguel Martín   │ 8         │ 2                 │
+│ Pedro Sánchez   │ 6         │ 1                 │
+│ Raquel Herrera  │ 17        │ 2                 │
+│ Roberto Ruiz    │ 28        │ 2                 │
+│ Sofía Ruiz      │ 11        │ 1                 │
+└─────────────────┴───────────┴───────────────────┘
 ```
+</details>
 
 -- Obtener los clientes que han realizado más de un pedido en febrero de 2024.
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select c.nombre, COUNT(p.id_cliente) AS Q_Pedidos from Clientes c JOIN Pedidos p ON c.id  = p.id_cliente GROUP BY p.id_cliente HAVING COUNT(p.id_cliente) > 1 AND p.fecha_pedido REGEXP '2024-02-[0-9]';
+Respuesta: Ninguno.
 ```
+</details>
+
 
 -- Obtener los productos con precio entre 100 y 500.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select nombre, precio from productos where precio between 100 and 500;
+┌────────────────────────┬────────┐
+│         nombre         │ precio │
+├────────────────────────┼────────┤
+│ Tablet                 │ 299.99 │
+│ Impresora              │ 199.99 │
+│ Cámara Digital         │ 499.99 │
+│ Reproductor de Audio   │ 149.99 │
+│ Altavoces Inalámbricos │ 129.99 │
+│ Reloj Inteligente      │ 249.99 │
+│ Monitor LED            │ 349.99 │
+└────────────────────────┴────────┘
 ```
+</details>
 
 -- Obtener la cantidad total de productos en todos los pedidos por cliente ordenado por cantidad descendente.
 
@@ -249,31 +386,113 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 <summary>Respuesta</summary>
   
 ```
-
+select c.nombre, pe.id_pedido, SUM(pe.cantidad) AS Q_total_productos from Pedidos pe JOIN Clientes c ON pe.id_cliente = c.id GROUP BY pe.id_pedido ORDER BY pe.cantidad DESC;
+┌─────────────────┬───────────┬───────────────────┐
+│     nombre      │ id_pedido │ Q_total_productos │
+├─────────────────┼───────────┼───────────────────┤
+│ Carlos López    │ 3         │ 3                 │
+│ Laura García    │ 7         │ 3                 │
+│ Javier López    │ 12        │ 3                 │
+│ Alejandro Muñoz │ 16        │ 3                 │
+│ Beatriz Romero  │ 21        │ 3                 │
+│ Lucía Díaz      │ 25        │ 3                 │
+│ Juan Pérez      │ 1         │ 2                 │
+│ Luisa Martínez  │ 5         │ 2                 │
+│ Miguel Martín   │ 8         │ 2                 │
+│ David Torres    │ 10        │ 2                 │
+│ Daniel Muñoz    │ 14        │ 2                 │
+│ Raquel Herrera  │ 17        │ 2                 │
+│ Marina Díaz     │ 19        │ 2                 │
+│ Clara Sánchez   │ 23        │ 2                 │
+│ Mario Serrano   │ 26        │ 2                 │
+│ Roberto Ruiz    │ 28        │ 2                 │
+│ María Gómez     │ 2         │ 1                 │
+│ Ana Rodríguez   │ 4         │ 1                 │
+│ Pedro Sánchez   │ 6         │ 1                 │
+│ Elena González  │ 9         │ 1                 │
+│ Sofía Ruiz      │ 11        │ 1                 │
+│ Carmen Vargas   │ 13        │ 1                 │
+│ Isabel Serrano  │ 15        │ 1                 │
+│ Francisco Mora  │ 18        │ 1                 │
+│ Antonio Jiménez │ 20        │ 1                 │
+│ Carlos Gómez    │ 22        │ 1                 │
+│ Andrés Martínez │ 24        │ 1                 │
+│ Eva Torres      │ 27        │ 1                 │
+│ Celia García    │ 29        │ 1                 │
+└─────────────────┴───────────┴───────────────────┘
 ```
+</details>
+
 -- Obtener los clientes que tienen una 'a' en cualquier posición de su nombre.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+ select nombre from Clientes where nombre REGEXP 'A|a';
+┌─────────────────┐
+│     nombre      │
+├─────────────────┤
+│ Juan Pérez      │
+│ María Gómez     │
+│ Carlos López    │
+│ Ana Rodríguez   │
+│ Luisa Martínez  │
+│ Laura García    │
+│ Miguel Martín   │
+│ Elena González  │
+│ David Torres    │
+│ Sofía Ruiz      │
+│ Javier López    │
+│ Carmen Vargas   │
+│ Daniel Muñoz    │
+│ Isabel Serrano  │
+│ Alejandro Muñoz │
+│ Raquel Herrera  │
+│ Francisco Mora  │
+│ Marina Díaz     │
+│ Antonio Jiménez │
+│ Beatriz Romero  │
+│ Carlos Gómez    │
+│ Clara Sánchez   │
+│ Andrés Martínez │
+│ Lucía Díaz      │
+│ Mario Serrano   │
+│ Eva Torres      │
+│ Celia García    │
+└─────────────────┘
 ```
+</details>
 
 -- Obtener el precio máximo de los productos.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select MAX(precio) AS precio_max_prod from productos;
+┌─────────────────┐
+│ precio_max_prod │
+├─────────────────┤
+│ 1200.0          │
+└─────────────────┘
 ```
+</details>
 
 -- Obtener los pedidos realizados por el cliente con ID 1 en febrero de 2024.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select * from pedidos where id_cliente = 1 and fecha_pedido REGEXP '2024-02-01';
+┌───────────┬────────────┬─────────────┬──────────┬──────────────┐
+│ id_pedido │ id_cliente │ id_producto │ cantidad │ fecha_pedido │
+├───────────┼────────────┼─────────────┼──────────┼──────────────┤
+│ 1         │ 1          │ 1           │ 2        │ 2024-02-01   │
+└───────────┴────────────┴─────────────┴──────────┴──────────────┘
 ```
+</details>
 
 -- Obtener la cantidad total de productos en todos los pedidos por producto ordenado por total de productos descendente.
 
@@ -283,21 +502,27 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 ```
 
 ```
+</details>
+
 -- Obtener los productos que no tienen un precio registrado.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
 
 ```
+</details>
 
 -- Obtener la fecha del último pedido realizado.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
 
 ```
+</details>
 
 -- Obtener los clientes cuyo nombre tiene al menos 5 caracteres.
 
@@ -307,29 +532,79 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 ```
 
 ```
+</details>
+
 -- Obtener los productos que tienen la letra 'o' en cualquier posición del nombre.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select nombre from productos where nombre REGEXP 'O|o';
+┌───────────────────────────────────┐
+│              nombre               │
+├───────────────────────────────────┤
+│ Laptop                            │
+│ Smartphone                        │
+│ Auriculares Bluetooth             │
+│ Impresora                         │
+│ Reproductor de Audio              │
+│ Altavoces Inalámbricos            │
+│ Reloj Inteligente                 │
+│ Teclado Inalámbrico               │
+│ Ratón Óptico                      │
+│ Monitor LED                       │
+│ Mochila para Portátil             │
+│ Disco Duro Externo                │
+│ Router Wi-Fi                      │
+│ Tarjeta de Memoria                │
+│ Cargador Inalámbrico              │
+│ Kit de Limpieza para Computadoras │
+│ Soporte para Teléfono             │
+│ Funda para Laptop                 │
+│ Adaptador HDMI                    │
+└───────────────────────────────────┘
 ```
+</details>
+
 
 -- Obtener la cantidad total de productos en todos los pedidos por cliente ordenado por cliente.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
 
 ```
+</details>
 
 -- Obtener los clientes cuyos nombres no contienen la letra 'i':
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select nombre from clientes where nombre REGEXP 'I|i';
+┌─────────────────┐
+│     nombre      │
+├─────────────────┤
+│ Luisa Martínez  │
+│ Miguel Martín   │
+│ David Torres    │
+│ Sofía Ruiz      │
+│ Javier López    │
+│ Daniel Muñoz    │
+│ Isabel Serrano  │
+│ Francisco Mora  │
+│ Marina Díaz     │
+│ Antonio Jiménez │
+│ Beatriz Romero  │
+│ Mario Serrano   │
+│ Roberto Ruiz    │
+│ Celia García    │
+└─────────────────┘
 ```
+</details>
 
 -- Obtener los pedidos realizados por el cliente con ID 2 en febrero de 2024.
 
@@ -337,15 +612,29 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 <summary>Respuesta</summary>
   
 ```
-
+select * from pedidos where id_cliente = 2 and fecha_pedido REGEXP '2024-02-[0-9]';
+┌───────────┬────────────┬─────────────┬──────────┬──────────────┐
+│ id_pedido │ id_cliente │ id_producto │ cantidad │ fecha_pedido │
+├───────────┼────────────┼─────────────┼──────────┼──────────────┤
+│ 2         │ 2          │ 2           │ 1        │ 2024-02-02   │
+└───────────┴────────────┴─────────────┴──────────┴──────────────┘
 ```
+</details>
+
 -- Obtener el precio mínimo de los productos.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select MIN(precio) AS precio_min_prod from productos;
+┌─────────────────┐
+│ precio_min_prod │
+├─────────────────┤
+│ 9.99            │
+└─────────────────┘
 ```
+</details>
 
 -- Obtener los clientes que han realizado al menos un pedido en febrero de 2024.
 
@@ -353,23 +642,74 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 <summary>Respuesta</summary>
   
 ```
-
+select c.nombre, COUNT(p.id_cliente) AS Q_Pedidos from Clientes c JOIN Pedidos p ON c.id  = p.id_cliente GROUP BY p.id_cliente HAVING COUNT(p.id_cliente) >= 1 AND fecha_pedido REGEXP '2024-02-[0-9]{2}';
+┌─────────────────┬───────────┐
+│     nombre      │ Q_Pedidos │
+├─────────────────┼───────────┤
+│ Juan Pérez      │ 1         │
+│ María Gómez     │ 1         │
+│ Carlos López    │ 1         │
+│ Ana Rodríguez   │ 1         │
+│ Luisa Martínez  │ 1         │
+│ Pedro Sánchez   │ 1         │
+│ Laura García    │ 1         │
+│ Miguel Martín   │ 1         │
+│ Elena González  │ 1         │
+│ David Torres    │ 1         │
+│ Sofía Ruiz      │ 1         │
+│ Javier López    │ 1         │
+│ Carmen Vargas   │ 1         │
+│ Daniel Muñoz    │ 1         │
+│ Isabel Serrano  │ 1         │
+│ Alejandro Muñoz │ 1         │
+│ Raquel Herrera  │ 1         │
+│ Francisco Mora  │ 1         │
+│ Marina Díaz     │ 1         │
+│ Antonio Jiménez │ 1         │
+│ Beatriz Romero  │ 1         │
+│ Carlos Gómez    │ 1         │
+│ Clara Sánchez   │ 1         │
+│ Andrés Martínez │ 1         │
+│ Lucía Díaz      │ 1         │
+│ Mario Serrano   │ 1         │
+│ Eva Torres      │ 1         │
+│ Roberto Ruiz    │ 1         │
+│ Celia García    │ 1         │
+└─────────────────┴───────────┘
 ```
+</details>
+
 -- Obtener la fecha del último pedido realizado por el cliente con ID 3.
 
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select id_cliente, MAX(fecha_pedido) from pedidos where id_cliente= 3;
+┌────────────┬───────────────────┐
+│ id_cliente │ MAX(fecha_pedido) │
+├────────────┼───────────────────┤
+│ 3          │ 2024-02-03        │
+└────────────┴───────────────────┘
 ```
+</details>
+
 -- Obtener los productos que tienen una 'a' al final del nombre.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select nombre from productos where nombre REGEXP '[a|A]$';
+┌────────────────────┐
+│       nombre       │
+├────────────────────┤
+│ Impresora          │
+│ Batería Externa    │
+│ Tarjeta de Memoria │
+└────────────────────┘
 ```
+</details>
 
 -- Obtener los clientes cuyos nombres tienen al menos 4 vocales (mayúsculas|minúsculas).
 
@@ -379,6 +719,8 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 ```
 
 ```
+</details>
+
 -- Obtener los productos cuyo precio tenga al menos 4 números sin contrar los decimales.
 
 <details>
@@ -387,6 +729,8 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 ```
 
 ```
+</details>
+
 -- Obtener los clientes cuyos nombres tienen al menos una 'a' seguida de una 'e'.
 
 <details>
@@ -395,20 +739,54 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 ```
 
 ```
+</details>
+
 -- Obtener los productos cuyos nombres terminan con una consonante.
 
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select nombre from productos where nombre REGEXP '[^aeiou|AEIOU]$';
+┌───────────────────────────────────┐
+│              nombre               │
+├───────────────────────────────────┤
+│ Laptop                            │
+│ TV LED                            │
+│ Tablet                            │
+│ Auriculares Bluetooth             │
+│ Cámara Digital                    │
+│ Altavoces Inalámbricos            │
+│ Monitor LED                       │
+│ Mochila para Portátil             │
+│ Lámpara LED                       │
+│ Estuche para Auriculares          │
+│ Kit de Limpieza para Computadoras │
+│ Funda para Tablet                 │
+│ Hub USB                           │
+│ Webcam HD                         │
+│ Funda para Laptop                 │
+└───────────────────────────────────┘
 ```
+</details>
+
 -- Obtener los productos cuyos nombres empiezan con una vocal.
+
 <details>
 <summary>Respuesta</summary>
   
 ```
-
+select nombre from productos where nombre REGEXP '^[aeiou|AEIOU]';
+┌──────────────────────────┐
+│          nombre          │
+├──────────────────────────┤
+│ Auriculares Bluetooth    │
+│ Impresora                │
+│ Altavoces Inalámbricos   │
+│ Estuche para Auriculares │
+│ Adaptador HDMI           │
+└──────────────────────────┘
 ```
+</details>
 
 </div>
