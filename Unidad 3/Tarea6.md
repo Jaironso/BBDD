@@ -186,7 +186,8 @@ select * from pedidos where fecha_pedido REGEXP '2024-02-[0-9]{2}';
 <summary>Respuesta</summary>
   
 ```
-select pe.id_pedido, p.nombre, pe.cantidad from Pedidos pe JOIN Productos p ON pe.id_producto = p.id;
+select pe.id_pedido, p.nombre, pe.cantidad from Pedidos pe
+JOIN Productos p ON pe.id_producto = p.id;
 ┌───────────┬───────────────────────────────────┬──────────┐
 │ id_pedido │              nombre               │ cantidad │
 ├───────────┼───────────────────────────────────┼──────────┤
