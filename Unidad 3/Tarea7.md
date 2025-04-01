@@ -172,6 +172,10 @@ select nombre, COUNT(*) AS NumeroDeCompras from clientes WHERE id_cliente IN
 │ Isabel Díaz     │ 1               │
 │ Elena Torres    │ 1               │
 └─────────────────┴─────────────────┘
+
+Consulta del profesor:
+
+select id_cliente, count(id_coche) from ventas group by id_cliente;
 ```
 </details>
 
