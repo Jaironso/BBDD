@@ -55,6 +55,12 @@ select id_cliente, nombre from clientes where id_cliente IN
 │ 8          │ Isabel Díaz     │
 │ 10         │ Elena Torres    │
 └────────────┴─────────────────┘
+
+La que hizo el profesor:
+
+select cl.nombre from clientes cl, ventas v, coches c
+where v.id_cliente = cl.id_cliente and v.id_coche = c.id_coche and c.precio >
+(select AVG(precio) as precio from coches);
 ```
 </details>
 
