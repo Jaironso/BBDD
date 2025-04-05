@@ -663,7 +663,8 @@ select nombre from productos where nombre REGEXP 'O|o';
 ```
 select cl.nombre,
 (select SUM(pe.cantidad) from pedidos pe where cl.id = pe.id_cliente) AS Q_total_productos from clientes cl
-GROUP BY cl.nombre ORDER BY cl.nombre;
+GROUP BY cl.nombre
+ORDER BY cl.nombre;
 ┌─────────────────┬───────────────────┐
 │     nombre      │ Q_total_productos │
 ├─────────────────┼───────────────────┤
@@ -842,7 +843,32 @@ select nombre from productos where nombre REGEXP '[a|A]$';
 <summary>Respuesta</summary>
   
 ```
-
+select nombre from clientes where nombre REGEXP '.*([AEIOU|aeiou].*){4,}';
+┌─────────────────┐
+│     nombre      │
+├─────────────────┤
+│ Ana Rodríguez   │
+│ Luisa Martínez  │
+│ Laura García    │
+│ Miguel Martín   │
+│ Elena González  │
+│ David Torres    │
+│ Sofía Ruiz      │
+│ Javier López    │
+│ Carmen Vargas   │
+│ Daniel Muñoz    │
+│ Isabel Serrano  │
+│ Alejandro Muñoz │
+│ Raquel Herrera  │
+│ Francisco Mora  │
+│ Marina Díaz     │
+│ Antonio Jiménez │
+│ Beatriz Romero  │
+│ Mario Serrano   │
+│ Eva Torres      │
+│ Roberto Ruiz    │
+│ Celia García    │
+└─────────────────┘
 ```
 </details>
 
@@ -852,7 +878,12 @@ select nombre from productos where nombre REGEXP '[a|A]$';
 <summary>Respuesta</summary>
   
 ```
-
+select nombre, precio from productos where CAST(precio AS TEXT) REGEXP '^\d{4,}';
+┌────────┬────────┐
+│ nombre │ precio │
+├────────┼────────┤
+│ Laptop │ 1200.0 │
+└────────┴────────┘
 ```
 </details>
 
@@ -862,7 +893,8 @@ select nombre from productos where nombre REGEXP '[a|A]$';
 <summary>Respuesta</summary>
   
 ```
-
+sqlite> select nombre from clientes where nombre REGEXP 'ae|AE';
+sqlite> SIN RESULTADOS.
 ```
 </details>
 
