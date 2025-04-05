@@ -501,7 +501,42 @@ select * from pedidos where id_cliente = 1 and fecha_pedido REGEXP '2024-02-01';
 <summary>Respuesta</summary>
   
 ```
-
+select pr.nombre, (select SUM(pe.cantidad) from pedidos pe where pr.id = pe.id_producto) AS Q_total_Productos
+from productos pr
+GROUP BY pr.nombre
+ORDER BY Q_total_productos DESC;
+┌───────────────────────────────────┬───────────────────┐
+│              nombre               │ Q_total_Productos │
+├───────────────────────────────────┼───────────────────┤
+│ TV LED                            │ 3                 │
+│ Router Wi-Fi                      │ 3                 │
+│ Ratón Óptico                      │ 3                 │
+│ Hub USB                           │ 3                 │
+│ Cámara Digital                    │ 3                 │
+│ Cargador Inalámbrico              │ 3                 │
+│ Webcam HD                         │ 2                 │
+│ Reproductor de Audio              │ 2                 │
+│ Reloj Inteligente                 │ 2                 │
+│ Mochila para Portátil             │ 2                 │
+│ Lámpara LED                       │ 2                 │
+│ Laptop                            │ 2                 │
+│ Funda para Tablet                 │ 2                 │
+│ Estuche para Auriculares          │ 2                 │
+│ Auriculares Bluetooth             │ 2                 │
+│ Adaptador HDMI                    │ 2                 │
+│ Teclado Inalámbrico               │ 1                 │
+│ Tarjeta de Memoria                │ 1                 │
+│ Tablet                            │ 1                 │
+│ Soporte para Teléfono             │ 1                 │
+│ Smartphone                        │ 1                 │
+│ Monitor LED                       │ 1                 │
+│ Kit de Limpieza para Computadoras │ 1                 │
+│ Impresora                         │ 1                 │
+│ Funda para Laptop                 │ 1                 │
+│ Disco Duro Externo                │ 1                 │
+│ Batería Externa                   │ 1                 │
+│ Altavoces Inalámbricos            │ 1                 │
+└───────────────────────────────────┴───────────────────┘
 ```
 </details>
 
@@ -511,7 +546,7 @@ select * from pedidos where id_cliente = 1 and fecha_pedido REGEXP '2024-02-01';
 <summary>Respuesta</summary>
   
 ```
-
+No entiendo el enunciado.
 ```
 </details>
 
@@ -521,7 +556,12 @@ select * from pedidos where id_cliente = 1 and fecha_pedido REGEXP '2024-02-01';
 <summary>Respuesta</summary>
   
 ```
-
+select id_pedido, MAX(fecha_pedido) from pedidos;
+┌───────────┬───────────────────┐
+│ id_pedido │ MAX(fecha_pedido) │
+├───────────┼───────────────────┤
+│ 30        │ 2024-03-01        │
+└───────────┴───────────────────┘
 ```
 </details>
 
@@ -531,7 +571,40 @@ select * from pedidos where id_cliente = 1 and fecha_pedido REGEXP '2024-02-01';
 <summary>Respuesta</summary>
   
 ```
-
+select nombre from clientes WHERE nombre REGEXP '^.{5,}$';
+┌─────────────────┐
+│     nombre      │
+├─────────────────┤
+│ Juan Pérez      │
+│ María Gómez     │
+│ Carlos López    │
+│ Ana Rodríguez   │
+│ Luisa Martínez  │
+│ Pedro Sánchez   │
+│ Laura García    │
+│ Miguel Martín   │
+│ Elena González  │
+│ David Torres    │
+│ Sofía Ruiz      │
+│ Javier López    │
+│ Carmen Vargas   │
+│ Daniel Muñoz    │
+│ Isabel Serrano  │
+│ Alejandro Muñoz │
+│ Raquel Herrera  │
+│ Francisco Mora  │
+│ Marina Díaz     │
+│ Antonio Jiménez │
+│ Beatriz Romero  │
+│ Carlos Gómez    │
+│ Clara Sánchez   │
+│ Andrés Martínez │
+│ Lucía Díaz      │
+│ Mario Serrano   │
+│ Eva Torres      │
+│ Roberto Ruiz    │
+│ Celia García    │
+└─────────────────┘
 ```
 </details>
 
@@ -575,7 +648,40 @@ select nombre from productos where nombre REGEXP 'O|o';
 <summary>Respuesta</summary>
   
 ```
-
+select cl.nombre, (select SUM(pe.cantidad) from pedidos pe where cl.id = pe.id_cliente) AS Q_total_productos from clientes cl GROUP BY cl.nombre ORDER BY cl.nombre;
+┌─────────────────┬───────────────────┐
+│     nombre      │ Q_total_productos │
+├─────────────────┼───────────────────┤
+│ Alejandro Muñoz │ 3                 │
+│ Ana Rodríguez   │ 1                 │
+│ Andrés Martínez │ 1                 │
+│ Antonio Jiménez │ 1                 │
+│ Beatriz Romero  │ 3                 │
+│ Carlos Gómez    │ 1                 │
+│ Carlos López    │ 3                 │
+│ Carmen Vargas   │ 1                 │
+│ Celia García    │ 1                 │
+│ Clara Sánchez   │ 2                 │
+│ Daniel Muñoz    │ 2                 │
+│ David Torres    │ 2                 │
+│ Elena González  │ 1                 │
+│ Eva Torres      │ 1                 │
+│ Francisco Mora  │ 1                 │
+│ Isabel Serrano  │ 1                 │
+│ Javier López    │ 3                 │
+│ Juan Pérez      │ 2                 │
+│ Laura García    │ 3                 │
+│ Lucía Díaz      │ 3                 │
+│ Luisa Martínez  │ 2                 │
+│ Marina Díaz     │ 2                 │
+│ Mario Serrano   │ 2                 │
+│ María Gómez     │ 1                 │
+│ Miguel Martín   │ 2                 │
+│ Pedro Sánchez   │ 1                 │
+│ Raquel Herrera  │ 2                 │
+│ Roberto Ruiz    │ 2                 │
+│ Sofía Ruiz      │ 1                 │
+└─────────────────┴───────────────────┘
 ```
 </details>
 
