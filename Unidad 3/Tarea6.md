@@ -228,7 +228,10 @@ JOIN Productos p ON pe.id_producto = p.id;
 <summary>Respuesta</summary>
   
 ```
-select c.nombre, COUNT(p.id_cliente) AS Q_Pedidos from Clientes c JOIN Pedidos p ON c.id  = p.id_cliente GROUP BY p.id_cliente HAVING COUNT(p.id_cliente) > 1;
+select c.nombre, COUNT(p.id_cliente) AS Q_Pedidos from Clientes c
+JOIN Pedidos p ON c.id  = p.id_cliente
+GROUP BY p.id_cliente
+HAVING COUNT(p.id_cliente) > 1;
 Respuesta: Ningún cliente realizó más de un pedido.
 ```
 </details>
@@ -312,7 +315,10 @@ select nombre from productos where nombre REGEXP '^[Aa]|^[Bb]';
 <summary>Respuesta</summary>
   
 ```
-select c.nombre, pe.id_pedido, SUM(pe.cantidad) AS Q_total_productos from Pedidos pe JOIN Clientes c ON pe.id_cliente = c.id GROUP BY pe.id_pedido ORDER BY c.nombre;
+select c.nombre, pe.id_pedido, SUM(pe.cantidad) AS Q_total_productos from Pedidos pe
+JOIN Clientes c ON pe.id_cliente = c.id
+GROUP BY pe.id_pedido
+ORDER BY c.nombre;
 ┌─────────────────┬───────────┬───────────────────┐
 │     nombre      │ id_pedido │ Q_total_productos │
 ├─────────────────┼───────────┼───────────────────┤
@@ -354,7 +360,11 @@ select c.nombre, pe.id_pedido, SUM(pe.cantidad) AS Q_total_productos from Pedido
 <summary>Respuesta</summary>
   
 ```
-select c.nombre, COUNT(p.id_cliente) AS Q_Pedidos from Clientes c JOIN Pedidos p ON c.id  = p.id_cliente GROUP BY p.id_cliente HAVING COUNT(p.id_cliente) > 1 AND p.fecha_pedido REGEXP '2024-02-[0-9]';
+select c.nombre, COUNT(p.id_cliente) AS Q_Pedidos from Clientes c
+JOIN Pedidos p ON c.id  = p.id_cliente GROUP BY p.id_cliente
+HAVING COUNT(p.id_cliente) > 1
+AND p.fecha_pedido
+REGEXP '2024-02-[0-9]';
 Respuesta: Ninguno.
 ```
 </details>
@@ -387,7 +397,10 @@ select nombre, precio from productos where precio between 100 and 500;
 <summary>Respuesta</summary>
   
 ```
-select c.nombre, pe.id_pedido, SUM(pe.cantidad) AS Q_total_productos from Pedidos pe JOIN Clientes c ON pe.id_cliente = c.id GROUP BY pe.id_pedido ORDER BY pe.cantidad DESC;
+select c.nombre, pe.id_pedido, SUM(pe.cantidad) AS Q_total_productos from Pedidos pe
+JOIN Clientes c ON pe.id_cliente = c.id
+GROUP BY pe.id_pedido
+ORDER BY pe.cantidad DESC;
 ┌─────────────────┬───────────┬───────────────────┐
 │     nombre      │ id_pedido │ Q_total_productos │
 ├─────────────────┼───────────┼───────────────────┤
@@ -648,7 +661,9 @@ select nombre from productos where nombre REGEXP 'O|o';
 <summary>Respuesta</summary>
   
 ```
-select cl.nombre, (select SUM(pe.cantidad) from pedidos pe where cl.id = pe.id_cliente) AS Q_total_productos from clientes cl GROUP BY cl.nombre ORDER BY cl.nombre;
+select cl.nombre,
+(select SUM(pe.cantidad) from pedidos pe where cl.id = pe.id_cliente) AS Q_total_productos from clientes cl
+GROUP BY cl.nombre ORDER BY cl.nombre;
 ┌─────────────────┬───────────────────┐
 │     nombre      │ Q_total_productos │
 ├─────────────────┼───────────────────┤
@@ -749,7 +764,10 @@ select MIN(precio) AS precio_min_prod from productos;
 <summary>Respuesta</summary>
   
 ```
-select c.nombre, COUNT(p.id_cliente) AS Q_Pedidos from Clientes c JOIN Pedidos p ON c.id  = p.id_cliente GROUP BY p.id_cliente HAVING COUNT(p.id_cliente) >= 1 AND fecha_pedido REGEXP '2024-02-[0-9]{2}';
+select c.nombre, COUNT(p.id_cliente) AS Q_Pedidos from Clientes c
+JOIN Pedidos p ON c.id  = p.id_cliente GROUP BY p.id_cliente
+HAVING COUNT(p.id_cliente) >= 1 AND fecha_pedido
+REGEXP '2024-02-[0-9]{2}';
 ┌─────────────────┬───────────┐
 │     nombre      │ Q_Pedidos │
 ├─────────────────┼───────────┤
