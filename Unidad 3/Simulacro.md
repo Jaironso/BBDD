@@ -536,14 +536,13 @@ ORDER BY nombre, apellido1, apellido2;
 ```
 </details>
 
-
-
 -- ---------------------
 -- Subconsultas
 -- 0,2 puntos la correcta (1-5).
 -- 0,3 puntos la correcta (6-9).
 -- Total = 2,2 puntos
 --- Con operadores básicos de comparación
+-- --------------------
 
 -- 1. Devuelve un listado con todos las compras que ha realizado Adela Salas Díaz. (Sin utilizar INNER JOIN).
 
