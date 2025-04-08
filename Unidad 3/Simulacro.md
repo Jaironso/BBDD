@@ -161,8 +161,9 @@ ORDER BY apellido1, apellido2, nombre;
 ```
 </details>
 
--- (Consultas Multitabla Where)
+
 -- -----------------------------------------------
+-- (Consultas Multitabla Where)
 -- 0,3 puntos la correcta. Total =  2,1 puntos
 -- -----------------------------------------------
 
