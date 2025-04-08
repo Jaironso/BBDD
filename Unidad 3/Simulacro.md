@@ -306,6 +306,7 @@ ORDER BY nombre, apellido1, apellido2;
 </details>
 
 -- 6. Devuelve el nombre y los apellidos de todos los suministradores que ha participado en algún compra realizado por María Santana Moreno.
+
 <details>
 <summary>Respuesta</summary>
 
@@ -313,7 +314,9 @@ ORDER BY nombre, apellido1, apellido2;
 
 ```
 </details>
+
 -- 7. Devuelve el nombre de todos los consumidores que han realizado algún compra con el suministrador Daniel Sáez Vega.
+
 <details>
 <summary>Respuesta</summary>
 
@@ -322,70 +325,322 @@ ORDER BY nombre, apellido1, apellido2;
 ```
 </details>
 
--- (Consultas Multitabla Join)
+
 -- -----------------------------------------------
+-- (Consultas Multitabla Join)
 -- 0,3 puntos la correcta. Total = 2,1 puntos
 -- -----------------------------------------------
 
 -- 1. Devuelve un listado con el identificador, nombre y los apellidos de todos los consumidores que han realizado algún compra.
 -- El listado debe estar ordenado alfabéticamente y se deben eliminar los elementos repetidos.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 2. Devuelve un listado que muestre todos las compras que ha realizado cada consumidor. 
 -- El resultado debe mostrar todos los datos de las compras y del consumidor. El listado debe mostrar los datos de los consumidores ordenados alfabéticamente.
--- 3. Devuelve un listado que muestre todos las compras en los que ha participado un suministrador.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
+- 3. Devuelve un listado que muestre todos las compras en los que ha participado un suministrador.
 -- El resultado debe mostrar todos los datos de las compras y de los suministradores.
 -- El listado debe mostrar los datos de los suministradores ordenados alfabéticamente.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 4. Devuelve un listado que muestre todos los consumidores, con todos las compras que han realizado 
 -- y con los datos de los suministradores asociados a cada compra.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 5. Devuelve un listado de todos los consumidores que realizaron un compra durante el año 2020,
 -- cuya cantidad esté entre 300 € y 1000 €.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 6. Devuelve el nombre y los apellidos de todos los suministradores que ha participado en algún compra realizado por María Santana Moreno.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 7. Devuelve el nombre de todos los consumidores que han realizado algún compra con el suministrador Daniel Sáez Vega.
 
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
 
 -- ---------------------------
 -- Consultas resumen (funciones)
--- -----------------------------------------------
 -- 0,2 puntos la correcta. (1-6) 1,2 puntos
 -- 0,25 puntos la correcta. (7-10) 1 punto.
 -- Total = 2,2 puntos
 -- -----------------------------------------------
 
 -- 1. Calcula la cantidad media de todos las compras que aparecen en la tabla compra.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 2. Calcula el número total de suministradores distintos que aparecen en la tabla compra.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 3. Calcula el número total de consumidores que aparecen en la tabla consumidor.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 4. Calcula cuál es la mayor cantidad que aparece en la tabla compra.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 5. Calcula cuál es el valor máximo de categoría para cada una de las ciudades que aparece en la tabla consumidor.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 6. Calcula cuál es el máximo valor de las compras realizadas durante el mismo día para cada uno de los consumidores.
 -- Es decir, el mismo consumidor puede haber realizado varios compras de diferentes cantidades el mismo día.
 -- Se pide que se calcule cuál es el compra de máximo valor para cada uno de los días en los que un consumidor ha realizado un compra.
 -- Muestra el identificador del consumidor, nombre, apellidos, la fecha y el valor de la cantidad.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 7. Calcula cuál es el máximo valor de las compras realizadas durante el mismo día para cada uno de los consumidores,
 -- teniendo en cuenta que sólo queremos mostrar aquellas compras que superen la cantidad de 2000 €.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 8. Calcula el máximo valor de las compras realizadas para cada uno de los suministradores durante la fecha 2020-08-17.
 -- Muestra el identificador del suministrador, nombre, apellidos y total.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 9. Devuelve un listado con el identificador de consumidor, nombre y apellidos y el número total de compras que ha realizado cada uno de consumidores.
 -- Tenga en cuenta que pueden existir consumidores que no han realizado ninguna compra.
 -- Estos consumidores también deben aparecer en el listado indicando que el número de compras realizadas es 0.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 10. Devuelve un listado con el identificador de consumidor, nombre y apellidos y el número total de compras que ha realizado cada uno de consumidores durante el año 2020.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 
 -- ---------------------
 -- Subconsultas
--- -----------------------------------------------
 -- 0,2 puntos la correcta (1-5).
 -- 0,3 puntos la correcta (6-9).
 -- Total = 2,2 puntos
--- -----------------------------------------------
-
 --- Con operadores básicos de comparación
 
 -- 1. Devuelve un listado con todos las compras que ha realizado Adela Salas Díaz. (Sin utilizar INNER JOIN).
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 2. Devuelve la fecha y la cantidad del compra de menor valor realizado por el cliente Pepe Ruiz Santana.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 3. Devuelve el número de compras en los que ha participado el suministrador Daniel Sáez Vega. (Sin utilizar INNER JOIN)
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 4. Devuelve los datos del consumidor que realizó el compra más caro en el año 2021. (Sin utilizar INNER JOIN)
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 5. Devuelve un listado con los datos de los consumidores y las compras, de todos los consumidores que han realizado un compra durante el año 2020 con un valor mayor o igual al valor medio de las compras realizadas durante ese mismo año.
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 6. Devuelve un listado de los consumidores que no han realizado ningún compra. (Utilizando IN o NOT IN).
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 7. Devuelve un listado de los suministradores que no han realizado ningún compra. (Utilizando IN o NOT IN).
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 8. Devuelve un listado de los consumidores que no han realizado ningún compra. (Utilizando EXISTS o NOT EXISTS).
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
+
+
 -- 9. Devuelve un listado de los suministradores que no han realizado ningún compra. (Utilizando EXISTS o NOT EXISTS).
+
+<details>
+<summary>Respuesta</summary>
+
+```
+
+```
+</details>
 
 </div>
