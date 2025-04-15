@@ -640,7 +640,19 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select * from compra c
+where c.id_consumidor IN
+  (select con.id from consumidor con
+  WHERE con.nombre REGEXP 'Adela'
+  AND con.apellido1 REGEXP 'Salas'
+  AND con.apellido2 REGEXP 'Díaz');
+┌────┬────────┬────────────┬───────────────┬──────────────────┐
+│ id │ total  │   fecha    │ id_consumidor │ id_suministrador │
+├────┼────────┼────────────┼───────────────┼──────────────────┤
+│ 3  │ 65.26  │ 2020-10-05 │ 2             │ 1                │
+│ 7  │ 5760.0 │ 2018-09-10 │ 2             │ 1                │
+│ 12 │ 3045.6 │ 2020-04-25 │ 2             │ 1                │
+└────┴────────┴────────────┴───────────────┴──────────────────┘
 ```
 </details>
 
@@ -651,7 +663,17 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select MIN(total), fecha from compra c
+WHERE c.id_consumidor IN
+  (select id from consumidor
+  where nombre REGEXP 'Pepe'
+  AND apellido1 REGEXP 'Ruiz'
+  AND apellido2 REGEXP 'Santana');
+┌────────────┬────────────┐
+│ MIN(total) │   fecha    │
+├────────────┼────────────┤
+│ 110.5      │ 2019-08-17 │
+└────────────┴────────────┘
 ```
 </details>
 
@@ -662,7 +684,17 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select COUNT(*) AS ComprasByDaniel FROM compra
+WHERE id_suministrador IN
+  (select id FROM suministrador
+  WHERE nombre REGEXP 'Daniel'
+  AND apellido1 REGEXP 'Sáez'
+  AND apellido2 REGEXP 'Vega');
+┌─────────────────┐
+│ ComprasByDaniel │
+├─────────────────┤
+│ 6               │
+└─────────────────┘
 ```
 </details>
 
@@ -673,7 +705,12 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
+select * from consumidor
+where id IN
+  (select MAX(total) from compra
+  where fecha REGEXP '2021-[0-9]{2}-[0-9]{2}');
 
+NO DA RESULTADO, NINGUNA COMPRA EN ESA FECHA.
 ```
 </details>
 
@@ -684,7 +721,19 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select * from consumidor con
+WHERE id IN
+  (select id_consumidor from compra c
+  where fecha REGEXP '2020-[0-9]{2}-[0-9]{2}'
+  AND c.id_consumidor = con.id
+  AND c.total >
+    (select AVG(total) from compra));
+┌────┬────────┬───────────┬───────────┬─────────┬───────────┐
+│ id │ nombre │ apellido1 │ apellido2 │ ciudad  │ categoria │
+├────┼────────┼───────────┼───────────┼─────────┼───────────┤
+│ 2  │ Adela  │ Salas     │ Díaz      │ Granada │ 200       │
+│ 4  │ Adrián │ Suárez    │           │ Jaén    │ 300       │
+└────┴────────┴───────────┴───────────┴─────────┴───────────┘
 ```
 </details>
 
@@ -695,7 +744,15 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select * from consumidor
+WHERE id NOT IN
+  (select id_consumidor from compra);
+┌────┬───────────┬───────────┬───────────┬─────────┬───────────┐
+│ id │  nombre   │ apellido1 │ apellido2 │ ciudad  │ categoria │
+├────┼───────────┼───────────┼───────────┼─────────┼───────────┤
+│ 9  │ Guillermo │ López     │ Gómez     │ Granada │ 225       │
+│ 10 │ Daniel    │ Santana   │ Loyola    │ Sevilla │ 125       │
+└────┴───────────┴───────────┴───────────┴─────────┴───────────┘
 ```
 </details>
 
@@ -706,7 +763,15 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select * from suministrador
+WHERE id NOT IN
+  (select id_suministrador from compra);
+┌────┬─────────┬───────────┬───────────┬───────────┐
+│ id │ nombre  │ apellido1 │ apellido2 │ categoria │
+├────┼─────────┼───────────┼───────────┼───────────┤
+│ 4  │ Marta   │ Herrera   │ Gil       │ 0.14      │
+│ 8  │ Alfredo │ Ruiz      │ Flores    │ 0.05      │
+└────┴─────────┴───────────┴───────────┴───────────┘
 ```
 </details>
 
@@ -717,7 +782,16 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select * from consumidor con
+WHERE NOT EXISTS
+  (select * from compra c
+  where c.id_consumidor = con.id);
+┌────┬───────────┬───────────┬───────────┬─────────┬───────────┐
+│ id │  nombre   │ apellido1 │ apellido2 │ ciudad  │ categoria │
+├────┼───────────┼───────────┼───────────┼─────────┼───────────┤
+│ 9  │ Guillermo │ López     │ Gómez     │ Granada │ 225       │
+│ 10 │ Daniel    │ Santana   │ Loyola    │ Sevilla │ 125       │
+└────┴───────────┴───────────┴───────────┴─────────┴───────────┘
 ```
 </details>
 
@@ -728,7 +802,16 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select * from suministrador s
+WHERE NOT EXISTS
+  (select id_suministrador from compra c
+  WHERE s.id=c.id_suministrador);
+┌────┬─────────┬───────────┬───────────┬───────────┐
+│ id │ nombre  │ apellido1 │ apellido2 │ categoria │
+├────┼─────────┼───────────┼───────────┼───────────┤
+│ 4  │ Marta   │ Herrera   │ Gil       │ 0.14      │
+│ 8  │ Alfredo │ Ruiz      │ Flores    │ 0.05      │
+└────┴─────────┴───────────┴───────────┴───────────┘
 ```
 </details>
 
