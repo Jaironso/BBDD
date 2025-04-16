@@ -445,7 +445,7 @@ ORDER BY con.nombre;
 </details>
 
 
-- 3. Devuelve un listado que muestre todos las compras en los que ha participado un suministrador.
+-- 3. Devuelve un listado que muestre todos las compras en los que ha participado un suministrador.
 -- El resultado debe mostrar todos los datos de las compras y de los suministradores.
 -- El listado debe mostrar los datos de los suministradores ordenados alfabéticamente.
 
