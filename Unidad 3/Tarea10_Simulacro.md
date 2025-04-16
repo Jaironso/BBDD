@@ -453,7 +453,29 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select * from suministrador s
+RIGHT JOIN compra c ON s.id = c.id_suministrador
+ORDER BY s.nombre;
+┌────┬─────────┬───────────┬───────────┬───────────┬────┬─────────┬────────────┬───────────────┬──────────────────┐
+│ id │ nombre  │ apellido1 │ apellido2 │ categoria │ id │  total  │   fecha    │ id_consumidor │ id_suministrador │
+├────┼─────────┼───────────┼───────────┼───────────┼────┼─────────┼────────────┼───────────────┼──────────────────┤
+│ 5  │ Antonio │ Carretero │ Ortega    │ 0.12      │ 2  │ 270.65  │ 2019-09-10 │ 1             │ 5                │
+│ 5  │ Antonio │ Carretero │ Ortega    │ 0.12      │ 15 │ 370.85  │ 2022-03-11 │ 1             │ 5                │
+│ 5  │ Antonio │ Carretero │ Ortega    │ 0.12      │ 16 │ 2389.23 │ 2022-03-11 │ 1             │ 5                │
+│ 7  │ Antonio │ Vega      │ Hernández │ 0.11      │ 11 │ 75.29   │ 2019-08-17 │ 3             │ 7                │
+│ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │ 3  │ 65.26   │ 2020-10-05 │ 2             │ 1                │
+│ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │ 6  │ 2400.6  │ 2019-07-27 │ 7             │ 1                │
+│ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │ 7  │ 5760.0  │ 2018-09-10 │ 2             │ 1                │
+│ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │ 12 │ 3045.6  │ 2020-04-25 │ 2             │ 1                │
+│ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │ 13 │ 545.75  │ 2022-01-25 │ 6             │ 1                │
+│ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │ 14 │ 145.82  │ 2020-02-02 │ 6             │ 1                │
+│ 3  │ Diego   │ Flores    │ Salas     │ 0.11      │ 4  │ 110.5   │ 2019-08-17 │ 8             │ 3                │
+│ 3  │ Diego   │ Flores    │ Salas     │ 0.11      │ 9  │ 2480.4  │ 2019-10-10 │ 8             │ 3                │
+│ 2  │ Juan    │ Gómez     │ López     │ 0.13      │ 1  │ 150.5   │ 2020-10-05 │ 5             │ 2                │
+│ 2  │ Juan    │ Gómez     │ López     │ 0.13      │ 5  │ 948.5   │ 2020-09-10 │ 5             │ 2                │
+│ 2  │ Juan    │ Gómez     │ López     │ 0.13      │ 10 │ 250.45  │ 2018-06-27 │ 8             │ 2                │
+│ 6  │ Manuel  │ Domínguez │ Hernández │ 0.13      │ 8  │ 1983.43 │ 2020-10-10 │ 4             │ 6                │
+└────┴─────────┴───────────┴───────────┴───────────┴────┴─────────┴────────────┴───────────────┴──────────────────┘
 ```
 </details>
 
@@ -465,7 +487,30 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select * from consumidor con
+JOIN compra c ON con.id = c.id_consumidor
+JOIN suministrador s ON s.id = c.id_suministrador
+ORDER BY con.nombre;
+┌────┬────────┬───────────┬───────────┬─────────┬───────────┬────┬─────────┬────────────┬───────────────┬──────────────────┬────┬─────────┬───────────┬───────────┬───────────┐
+│ id │ nombre │ apellido1 │ apellido2 │ ciudad  │ categoria │ id │  total  │   fecha    │ id_consumidor │ id_suministrador │ id │ nombre  │ apellido1 │ apellido2 │ categoria │
+├────┼────────┼───────────┼───────────┼─────────┼───────────┼────┼─────────┼────────────┼───────────────┼──────────────────┼────┼─────────┼───────────┼───────────┼───────────┤
+│ 1  │ Aarón  │ Rivero    │ Gómez     │ Almería │ 100       │ 2  │ 270.65  │ 2019-09-10 │ 1             │ 5                │ 5  │ Antonio │ Carretero │ Ortega    │ 0.12      │
+│ 1  │ Aarón  │ Rivero    │ Gómez     │ Almería │ 100       │ 15 │ 370.85  │ 2022-03-11 │ 1             │ 5                │ 5  │ Antonio │ Carretero │ Ortega    │ 0.12      │
+│ 1  │ Aarón  │ Rivero    │ Gómez     │ Almería │ 100       │ 16 │ 2389.23 │ 2022-03-11 │ 1             │ 5                │ 5  │ Antonio │ Carretero │ Ortega    │ 0.12      │
+│ 2  │ Adela  │ Salas     │ Díaz      │ Granada │ 200       │ 3  │ 65.26   │ 2020-10-05 │ 2             │ 1                │ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │
+│ 2  │ Adela  │ Salas     │ Díaz      │ Granada │ 200       │ 7  │ 5760.0  │ 2018-09-10 │ 2             │ 1                │ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │
+│ 2  │ Adela  │ Salas     │ Díaz      │ Granada │ 200       │ 12 │ 3045.6  │ 2020-04-25 │ 2             │ 1                │ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │
+│ 3  │ Adolfo │ Rubio     │ Flores    │ Sevilla │           │ 11 │ 75.29   │ 2019-08-17 │ 3             │ 7                │ 7  │ Antonio │ Vega      │ Hernández │ 0.11      │
+│ 4  │ Adrián │ Suárez    │           │ Jaén    │ 300       │ 8  │ 1983.43 │ 2020-10-10 │ 4             │ 6                │ 6  │ Manuel  │ Domínguez │ Hernández │ 0.13      │
+│ 5  │ Marcos │ Loyola    │ Méndez    │ Almería │ 200       │ 1  │ 150.5   │ 2020-10-05 │ 5             │ 2                │ 2  │ Juan    │ Gómez     │ López     │ 0.13      │
+│ 5  │ Marcos │ Loyola    │ Méndez    │ Almería │ 200       │ 5  │ 948.5   │ 2020-09-10 │ 5             │ 2                │ 2  │ Juan    │ Gómez     │ López     │ 0.13      │
+│ 6  │ María  │ Santana   │ Moreno    │ Cádiz   │ 100       │ 13 │ 545.75  │ 2022-01-25 │ 6             │ 1                │ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │
+│ 6  │ María  │ Santana   │ Moreno    │ Cádiz   │ 100       │ 14 │ 145.82  │ 2020-02-02 │ 6             │ 1                │ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │
+│ 8  │ Pepe   │ Ruiz      │ Santana   │ Huelva  │ 200       │ 4  │ 110.5   │ 2019-08-17 │ 8             │ 3                │ 3  │ Diego   │ Flores    │ Salas     │ 0.11      │
+│ 8  │ Pepe   │ Ruiz      │ Santana   │ Huelva  │ 200       │ 9  │ 2480.4  │ 2019-10-10 │ 8             │ 3                │ 3  │ Diego   │ Flores    │ Salas     │ 0.11      │
+│ 8  │ Pepe   │ Ruiz      │ Santana   │ Huelva  │ 200       │ 10 │ 250.45  │ 2018-06-27 │ 8             │ 2                │ 2  │ Juan    │ Gómez     │ López     │ 0.13      │
+│ 7  │ Pilar  │ Ruiz      │           │ Sevilla │ 300       │ 6  │ 2400.6  │ 2019-07-27 │ 7             │ 1                │ 1  │ Daniel  │ Sáez      │ Vega      │ 0.15      │
+└────┴────────┴───────────┴───────────┴─────────┴───────────┴────┴─────────┴────────────┴───────────────┴──────────────────┴────┴─────────┴───────────┴───────────┴───────────┘
 ```
 </details>
 
@@ -477,7 +522,15 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select * from consumidor con
+JOIN compra c ON con.id = c.id_consumidor
+WHERE c.fecha REGEXP '2020-[0-9]{2}-[0-9]{2}'
+AND c.total BETWEEN 300 AND 1000;
+┌────┬────────┬───────────┬───────────┬─────────┬───────────┬────┬───────┬────────────┬───────────────┬──────────────────┐
+│ id │ nombre │ apellido1 │ apellido2 │ ciudad  │ categoria │ id │ total │   fecha    │ id_consumidor │ id_suministrador │
+├────┼────────┼───────────┼───────────┼─────────┼───────────┼────┼───────┼────────────┼───────────────┼──────────────────┤
+│ 5  │ Marcos │ Loyola    │ Méndez    │ Almería │ 200       │ 5  │ 948.5 │ 2020-09-10 │ 5             │ 2                │
+└────┴────────┴───────────┴───────────┴─────────┴───────────┴────┴───────┴────────────┴───────────────┴──────────────────┘
 ```
 </details>
 
@@ -488,7 +541,17 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select DISTINCT(s.nombre), s.apellido1, s.apellido2 from suministrador s
+JOIN compra c ON s.id = c.id_suministrador
+JOIN consumidor con ON con.id = c.id_consumidor
+WHERE con.nombre REGEXP 'María'
+AND con.apellido1 REGEXP 'Santana'
+AND con.apellido2 REGEXP 'Moreno';
+┌────────┬───────────┬───────────┐
+│ nombre │ apellido1 │ apellido2 │
+├────────┼───────────┼───────────┤
+│ Daniel │ Sáez      │ Vega      │
+└────────┴───────────┴───────────┘
 ```
 </details>
 
@@ -499,7 +562,19 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select DISTINCT(con.nombre), con.apellido1, con.apellido2 from consumidor con
+JOIN compra c ON con.id = c.id_consumidor
+JOIN suministrador s ON s.id = c.id_suministrador
+WHERE s.nombre REGEXP 'Daniel'
+AND s.apellido1 REGEXP 'Sáez'
+AND s.apellido2 REGEXP 'Vega';
+┌────────┬───────────┬───────────┐
+│ nombre │ apellido1 │ apellido2 │
+├────────┼───────────┼───────────┤
+│ Adela  │ Salas     │ Díaz      │
+│ Pilar  │ Ruiz      │           │
+│ María  │ Santana   │ Moreno    │
+└────────┴───────────┴───────────┘
 ```
 </details>
 
@@ -516,7 +591,12 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select AVG(total) from compra;
+┌─────────────┐
+│ AVG(total)  │
+├─────────────┤
+│ 1312.051875 │
+└─────────────┘
 ```
 </details>
 
@@ -527,7 +607,12 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select COUNT(DISTINCT(id_suministrador)) AS SuministradoresConCompras from compra;
+┌───────────────────────────┐
+│ SuministradoresConCompras │
+├───────────────────────────┤
+│ 6                         │
+└───────────────────────────┘
 ```
 </details>
 
@@ -538,7 +623,12 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select COUNT(id) AS Q_Consumidores from consumidor;
+┌────────────────┐
+│ Q_Consumidores │
+├────────────────┤
+│ 10             │
+└────────────────┘
 ```
 </details>
 
@@ -549,7 +639,12 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select MAX(total) AS Max_Compra from compra;
+┌────────────┐
+│ Max_Compra │
+├────────────┤
+│ 5760.0     │
+└────────────┘
 ```
 </details>
 
@@ -560,7 +655,18 @@ ORDER BY con.nombre;
 <summary>Respuesta</summary>
 
 ```
-
+select Ciudad, MAX(Categoria) from consumidor
+GROUP BY Ciudad;
+┌─────────┬────────────────┐
+│ Ciudad  │ MAX(Categoria) │
+├─────────┼────────────────┤
+│ Almería │ 200            │
+│ Cádiz   │ 100            │
+│ Granada │ 225            │
+│ Huelva  │ 200            │
+│ Jaén    │ 300            │
+│ Sevilla │ 300            │
+└─────────┴────────────────┘
 ```
 </details>
 
