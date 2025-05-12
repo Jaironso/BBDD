@@ -18,7 +18,7 @@
 Se pide:
 
 ## Elimine la tabla "alumno" si existe.
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
@@ -30,7 +30,7 @@ DROP TABLE IF EXISTS alumno;
 </details>
 
 ## Cree la tabla definiendo una clave primaria compuesta (año de inscripción y número de inscripción).
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 
 <details>
@@ -54,7 +54,7 @@ CREATE TABLE alumno (
 
 ## Define los siguientes indices:
 Un índice único por el campo "documento" y un índice común por ciudad y provincia.
-Nota:Muestra el comando y la salida. Justifica el tipo de indice en un comentario.
+Nota: Muestra el comando y la salida. Justifica el tipo de indice en un comentario.
 
 
 <details>
@@ -70,27 +70,25 @@ CREATE INDEX idx_ciudad_pronvincia ON alumno(ciudad, provincia);
 
 
 ## Vea los índices de la tabla.
-Nota:Muestra el comando y la salida "show index".
+Nota: Muestra el comando y la salida "show index".
 
 <details>
 <summary>Respuesta</summary>
 
-<pre>
-```
 SHOW INDEX from alumno;
 
-# +--+--+Table	Non_unique	Key_name	Seq_in_index	Column_name	Collation	Cardinality	Sub_part	Packed	Null	Index_type	Comment	Index_comment	Visible	Expression
-alumno	0	PRIMARY	1	num_inscripcion	A	0				BTREE			YES	
-alumno	0	PRIMARY	2	anio_inscripcion	A	0				BTREE			YES	
-alumno	0	idx_dni	1	dni	A	0			YES	BTREE			YES	
-alumno	1	idx_ciudad_pronvincia	1	ciudad	A	0			YES	BTREE			YES	
-alumno	1	idx_ciudad_pronvincia	2	provincia	A	0			YES	BTREE			YES	
+| Table  | Non_unique | Key_name               | Seq_in_index | Column_name      | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
+|--------|------------|------------------------|---------------|------------------|-----------|-------------|----------|--------|------|-------------|---------|----------------|---------|------------|
+| alumno | 0          | PRIMARY                | 1             | num_inscripcion  | A         | 0           |          |        |      | BTREE       |         |                | YES     |            |
+| alumno | 0          | PRIMARY                | 2             | anio_inscripcion | A         | 0           |          |        |      | BTREE       |         |                | YES     |            |
+| alumno | 0          | idx_dni                | 1             | dni              | A         | 0           |          |        | YES  | BTREE       |         |                | YES     |            |
+| alumno | 1          | idx_ciudad_pronvincia  | 1             | ciudad           | A         | 0           |          |        | YES  | BTREE       |         |                | YES     |            |
+| alumno | 1          | idx_ciudad_pronvincia  | 2             | provincia        | A         | 0           |          |        | YES  | BTREE       |         |                | YES     |            |
 
-```
 </details>
 
 ## Intente ingresar un alumno con clave primaria repetida.
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
@@ -101,7 +99,7 @@ Nota:Muestra el comando y la salida.
 </details>
 
 ## Intente ingresar un alumno con documento repetido.
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
@@ -112,7 +110,7 @@ Nota:Muestra el comando y la salida.
 </details>
 
 ## Ingrese varios alumnos de la misma ciudad y provincia.
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
@@ -123,7 +121,7 @@ Nota:Muestra el comando y la salida.
 </details>
 
 ## Elimina los indices creados, y muestra que ya no se encuentran.
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
