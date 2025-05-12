@@ -27,49 +27,91 @@ DROP TABLE IF EXISTS cliente;
 ```
 </details>
 
-## Cree la tabla si clave primaria y incluye a posteriori esta.
+## Cree la tabla sin clave primaria y incluye a posteriori esta.
 Nota:Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
 
 ```
+CREATE TABLE cliente (
+	dni CHAR(8) NOT NULL,
+    nombres VARCHAR(30) NOT NULL,
+	domicilio VARCHAR (30),
+    ciudad VARCHAR (20),
+    provincia VARCHAR (20),
+    telefono VARCHAR (11)
+);
+
+0 row(s) affected
+
+ALTER TABLE cliente
+ADD PRIMARY KEY (dni);
+
+0 row(s) affected Records: 0  Duplicates: 0  Warnings: 0
 
 ```
 </details>
 
 ## Define los siguientes indices:
-Un índice único por el campo "documento" y un índice común por ciudad y provincia. >Nota:Muestra el comando y la salida. Justifica el tipo de indice en un comentario.
+Un índice único por el campo "documento" y un índice común por ciudad y provincia.
+Nota: Muestra el comando y la salida. Justifica el tipo de indice en un comentario.
 Vea los índices de la tabla.
-Nota:Muestra el comando y la salida "show index".
+Nota: Muestra el comando y la salida "show index".
 
 <details>
 <summary>Respuesta</summary>
 
-```
+CREATE INDEX idx_ciudad_pronvincia ON cliente(ciudad, provincia);
 
-```
+0 row(s) affected Records: 0  Duplicates: 0  Warnings: 0
+
+
+SHOW INDEX from cliente;
+| Table   | Non_unique | Key_name              | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
+|---------|------------|-----------------------|--------------|-------------|-----------|-------------|----------|--------|------|------------|---------|----------------|---------|-------------|
+| cliente | 0          | PRIMARY               | 1            | dni         | A         | 0           |          |        |      | BTREE      |         |                | YES     |             |
+| cliente | 1          | idx_ciudad_pronvincia | 1            | ciudad      | A         | 0           |          |        | YES  | BTREE      |         |                | YES     |             |
+| cliente | 1          | idx_ciudad_pronvincia | 2            | provincia   | A         | 0           |          |        | YES  | BTREE      |         |                | YES     |             |
+
 </details>
 
 ## Agregue un índice único por el campo "telefono".
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
 
-```
+CREATE UNIQUE INDEX idx_telefono ON cliente(telefono);
 
-```
+0 row(s) affected Records: 0  Duplicates: 0  Warnings: 0
+
+
+SHOW INDEX from cliente;
+
+| Table   | Non_unique | Key_name              | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
+|---------|------------|-----------------------|--------------|-------------|-----------|-------------|----------|--------|------|------------|---------|----------------|---------|-------------|
+| cliente | 0          | PRIMARY               | 1            | dni         | A         | 0           |          |        |      | BTREE      |         |                | YES     |             |
+| cliente | 0          | idx_telefono          | 1            | telefono    | A         | 0           |          |        | YES  | BTREE      |         |                | YES     |             |
+| cliente | 1          | idx_ciudad_pronvincia | 1            | ciudad      | A         | 0           |          |        | YES  | BTREE      |         |                | YES     |             |
+| cliente | 1          | idx_ciudad_pronvincia | 2            | provincia   | A         | 0           |          |        | YES  | BTREE      |         |                | YES     |             |
+
+
 </details>
 
 ## Elimina los índices.
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
 
 ```
+DROP INDEX idx_ciudad_provincia ON cliente;
+0 row(s) affected Records: 0  Duplicates: 0  Warnings: 0
 
+
+DROP INDEX idx_telefono ON cliente;
+0 row(s) affected Records: 0  Duplicates: 0  Warnings: 0
 ```
 </details>
 
