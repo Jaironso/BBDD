@@ -94,7 +94,10 @@ Nota: Muestra el comando y la salida.
 <summary>Respuesta</summary>
 
 ```
+INSERT INTO alumno VALUES (1,2024, 'Jairo Afonso', '12345678', 'Calle Los Cercados, 2', 'La Victoria', 'Tenerife');
+INSERT INTO alumno VALUES (1,2024, 'Begoña Armas', '98765432', 'Calle Los Cercados, 2', 'La Victoria', 'Tenerife');
 
+Error Code: 1062. Duplicate entry '1-2024' for key 'alumno.PRIMARY'
 ```
 </details>
 
@@ -105,7 +108,10 @@ Nota: Muestra el comando y la salida.
 <summary>Respuesta</summary>
 
 ```
+INSERT INTO alumno VALUES (1,2024, 'Jairo Afonso', '12345678', 'Calle Los Cercados, 2', 'La Victoria', 'Tenerife');
+INSERT INTO alumno VALUES (2,2024, 'Begoña Armas', '12345678', 'Calle Los Cercados, 2', 'La Victoria', 'Tenerife');
 
+Error Code: 1062. Duplicate entry '12345678' for key 'alumno.idx_dni'
 ```
 </details>
 
@@ -116,7 +122,15 @@ Nota: Muestra el comando y la salida.
 <summary>Respuesta</summary>
 
 ```
+INSERT INTO alumno VALUES (2,2024, 'Begoña Armas', '45678912', 'Calle El Relampago, 8', 'La Victoria', 'Tenerife');
+INSERT INTO alumno VALUES (3,2024, 'Evelin Alvarez', '32165487', 'Calle Guaira, 58', 'La Victoria', 'Tenerife');
+INSERT INTO alumno VALUES (4,2024, 'Fernando Suarez', '78954123', 'Calle Los Cerditos, 66', 'La Victoria', 'Tenerife');
 
+1 row(s) affected
+
+1 row(s) affected
+
+1 row(s) affected
 ```
 </details>
 
@@ -127,6 +141,12 @@ Nota: Muestra el comando y la salida.
 <summary>Respuesta</summary>
 
 ```
+DROP INDEX idx_dni ON alumno;
+DROP INDEX idx_ciudad_pronvincia ON alumno;
+
+0 row(s) affected Records: 0  Duplicates: 0  Warnings: 0
+
+0 row(s) affected Records: 0  Duplicates: 0  Warnings: 0
 
 ```
 </details>
