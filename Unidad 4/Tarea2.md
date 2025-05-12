@@ -22,7 +22,8 @@ Nota:Muestra el comando y la salida.
 <summary>Respuesta</summary>
 
 ```
-
+DROP TABLE IF EXISTS cliente;
+0 row(s) affected, 1 warning(s): 1051 Unknown table 'empresa.cliente'
 ```
 </details>
 
