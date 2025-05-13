@@ -16,7 +16,7 @@
 Se pide:
 
 ## Elimine la tabla "cliente" si existe.
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
@@ -28,7 +28,7 @@ DROP TABLE IF EXISTS cliente;
 </details>
 
 ## Cree la tabla sin clave primaria y incluye a posteriori esta.
-Nota:Muestra el comando y la salida.
+Nota: Muestra el comando y la salida.
 
 <details>
 <summary>Respuesta</summary>
