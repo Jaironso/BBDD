@@ -43,6 +43,7 @@ SELECT * FROM `ventas`;
 <summary>Respuesta</summary>
 
 CREATE idx_ciudad ON clientes(ciudad);
+
 SHOW INDEX from `clientes`;
 
 | Tabla    | Índice | Nombre del índice | Secuencia | Columna | Orden | Cardinalidad | Nulo | Tipo  | Único | Comentario |
@@ -51,6 +52,7 @@ SHOW INDEX from `clientes`;
 | clientes | 1      | idx_ciudad        | 1         | ciudad  | A     | 3            | YES  | BTREE | No     | NULL        |
 
 CREATE idx_fecha ON ventas(fecha);
+
 SHOW INDEX from `ventas`;
 
 | Tabla   | Índice | Nombre del índice | Secuencia | Columna     | Orden | Cardinalidad | Nulo | Tipo  | Único | Comentario |
