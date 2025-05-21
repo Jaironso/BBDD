@@ -136,7 +136,30 @@ SELECT calcular_total(1);
 <details>
 <summary>Respuesta</summary>
 
+```
+DELIMITER //
+DROP PROCEDURE IF EXISTS resumen_cliente //
+CREATE PROCEDURE resumen_cliente (IN id_de_cliente INT)
+BEGIN
+	SELECT
+	c.nombre AS Nombre_Cliente,
+	v.fecha AS Fecha_Venta,
+	p.nombre AS Nombre_Producto,
+	v.cantidad AS Q_comprada,
+	calcular_total(v.id) AS Total_Venta
+    	FROM ventas v
+    	JOIN clientes c ON v.cliente_id =  c.id
+    	JOIN productos p ON v.producto_id = p.id
+    	WHERE v.cliente_id = id_de_cliente;
+END //
+DELIMITER ; 
+```
+CALL resumen_cliente(1);
 
+| Nombre_Cliente | Fecha_Venta | Nombre_Producto | Q_Comprada | Total_Venta |
+|----------------|-------------|------------------|------------|--------------|
+| Ana Pérez      | 2024-05-01  | Laptop           | 1          | 1200.00      |
+| Ana Pérez      | 2024-05-12  | Teclado          | 2          | 100.00       |
 
 </details>
 
