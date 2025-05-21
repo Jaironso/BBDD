@@ -105,6 +105,28 @@ SELECT * FROM ventas_detalladas;
 <details>
 <summary>Respuesta</summary>
 
+```
+DELIMITER //
+DROP FUNCTION IF EXISTS calcular_total //
+CREATE FUNCTION calcular_total(venta_id INT) 
+RETURNS DECIMAL (15,2)
+DETERMINISTIC
+BEGIN
+    	DECLARE total DECIMAL (15,2);
+	SELECT p.precio * v.cantidad 
+        INTO total
+        FROM ventas v
+        JOIN productos p ON p.id = v.producto_id
+        WHERE v.id = venta_id;
+	RETURN total;
+END //
+DELIMITER ;
+```
+SELECT calcular_total(1);
+
+| calcular_total(1) |
+|-------------------|
+| 1200.00           |
 
 
 </details>
