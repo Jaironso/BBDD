@@ -297,7 +297,7 @@ SHOW INDEX FROM ventas;
 <details>
 <summary>Respuesta</summary>
 
-
+Falla la inserción debido a que el cliente no existe y la tabla ventas está asociada a través de la foreing key con de la id de cliente de la tabla clientes.
 
 </details>
 
@@ -306,7 +306,31 @@ SHOW INDEX FROM ventas;
 <details>
 <summary>Respuesta</summary>
 
+```
+DROP VIEW IF EXISTS ventas_detalladas; 
 
+CREATE VIEW ventas_detalladas AS
+	SELECT 
+    	v.id AS venta_id,
+        c.nombre AS nombre_cliente,
+        c.ciudad AS ciudad_cliente,
+        p.nombre AS nombre_producto,
+        v.fecha AS fecha_venta,
+        v.cantidad AS Q_comprada,
+        (p.precio * v.cantidad) AS total_venta
+    FROM ventas v
+    JOIN clientes c ON v.cliente_id = c.id
+    JOIN productos p ON v.producto_id = p.id;
+```
+
+SELECT * FROM ventas_detalladas;
+
+| venta_id | nombre_cliente | ciudad_cliente     | nombre_producto | fecha_venta  | Q_comprada | total_venta |
+|----------|----------------|--------------------|-----------------|--------------|------------|-------------|
+| 1        | Ana Pérez      | Barcelona          | Laptop          | 2024-05-01   | 1          | 1200.00     |
+| 2        | Ana Pérez      | Barcelona          | Teclado         | 2024-05-12   | 2          | 100.00      |
+| 3        | Luis Gómez     | Las Palmas GC      | Monitor         | 2024-05-13   | 1          | 300.00      |
+| 4        | Carlos Ruiz    | Madrid             | Teclado         | 2024-05-14   | 1          | 50.00       |
 
 </details>
 
