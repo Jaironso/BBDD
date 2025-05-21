@@ -72,9 +72,9 @@ SELECT nombre, email FROM estudiantes;
 
 | nombre         | email          |
 |----------------|----------------|
-| Mara Lpez      | maria@uni.edu  |
+| Maria Lpez      | maria@uni.edu  |
 | Juan Prez      | juan@uni.edu   |
-| Luca Fernndez  | lucia@uni.edu  |
+| Lucia Fernndez  | lucia@uni.edu  |
 | Carlos Ruiz    | carlos@uni.edu |
 
 </details>
