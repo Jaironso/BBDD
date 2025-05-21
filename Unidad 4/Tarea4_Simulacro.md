@@ -156,6 +156,21 @@ AND p.departamento = 'Informatica';
 
 <details>
 <summary>Respuesta</summary>
+  
+```
+SELECT 
+  	p.nombre AS Nombre_Profesor, 
+    c.nombre AS Nombre_Curso, 
+    p.departamento AS Nombre_Dpto
+FROM profesores p, cursos c
+WHERE c.profesor_id = p.id
+AND p.departamento = 'Informatica';
+```
+
+| Nombre_Profesor  | Nombre_Curso           | Nombre_Dpto |
+|------------------|------------------------|--------------|
+| Dr. Luis Gomez   | Programacion I         | Informatica  |
+| Dr. Luis Gomez   | Estructuras de Datos   | Informatica  |
 
 </details>
 
