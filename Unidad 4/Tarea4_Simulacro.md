@@ -105,10 +105,10 @@ SELECT nombre, creditos FROM cursos;
 <summary>Respuesta</summary>
 
 ```
-SELECT 
-  	p.nombre AS Nombre_Profesor, 
-    c.nombre AS Nombre_Curso, 
-    p.departamento AS Nombre_Dpto
+SELECT
+  p.nombre AS Nombre_Profesor,
+  c.nombre AS Nombre_Curso, 
+  p.departamento AS Nombre_Dpto
 FROM profesores p, cursos c
 WHERE c.profesor_id = p.id
 AND p.departamento = 'Informatica';
@@ -158,10 +158,10 @@ AND p.departamento = 'Informatica';
 <summary>Respuesta</summary>
   
 ```
-SELECT 
-  	p.nombre AS Nombre_Profesor, 
-    c.nombre AS Nombre_Curso, 
-    p.departamento AS Nombre_Dpto
+SELECT
+  p.nombre AS Nombre_Profesor,
+  c.nombre AS Nombre_Curso, 
+  p.departamento AS Nombre_Dpto
 FROM profesores p, cursos c
 WHERE c.profesor_id = p.id
 AND p.departamento = 'Informatica';
