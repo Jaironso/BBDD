@@ -149,6 +149,7 @@ WHERE ciudad = 'Madrid';
 SELECT * FROM cursos
 WHERE cursos.creditos > 5;
 ```
+
 | id | nombre            | profesor_id | creditos |
 |----|-------------------|-------------|----------|
 | 1  | Algebra Lineal    | 1           | 6        |
@@ -165,6 +166,7 @@ WHERE cursos.creditos > 5;
 SELECT * FROM matriculas
 WHERE fecha > '2022-12-31';
 ```
+  
 | id | estudiante_id | curso_id | fecha       |
 |----|---------------|----------|-------------|
 | 3  | 3             | 3        | 2023-09-02  |
@@ -185,10 +187,12 @@ FROM cursos c, profesores p
 WHERE c.profesor_id = p.id
 AND p.nombre = 'Dra. Ana Torres';
 ```
+
 | Nombre_Profesor   | Nombre_Curso   |
 |-------------------|----------------|
 | Dra. Ana Torres   | Algebra Lineal |
 | Dra. Ana Torres   | Calculo I      |
+
 </details>
 
 
@@ -249,6 +253,7 @@ NO ES POSIBLE HACER UN JOIN EN ESTA CONSULTA, SOLO UNA TABLA.
 SELECT * FROM cursos
 WHERE cursos.creditos > 5;
 ```
+
 | id | nombre            | profesor_id | creditos |
 |----|-------------------|-------------|----------|
 | 1  | Algebra Lineal    | 1           | 6        |
@@ -265,6 +270,7 @@ WHERE cursos.creditos > 5;
 SELECT * FROM matriculas
 WHERE fecha > '2022-12-31';
 ```
+
 | id | estudiante_id | curso_id | fecha       |
 |----|---------------|----------|-------------|
 | 3  | 3             | 3        | 2023-09-02  |
@@ -286,6 +292,7 @@ FROM cursos c
 JOIN profesores p ON c.profesor_id = p.id
 WHERE p.nombre = 'Dra. Ana Torres';
 ```
+
 | Nombre_Profesor   | Nombre_Curso   |
 |-------------------|----------------|
 | Dra. Ana Torres   | Algebra Lineal |
