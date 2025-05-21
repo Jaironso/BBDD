@@ -85,9 +85,9 @@ CREATE VIEW ventas_detalladas AS
         v.fecha AS fecha_venta,
         v.cantidad AS Q_comprada,
         (p.precio * v.cantidad) AS total_venta
-    FROM ventas v
-    JOIN clientes c ON v.cliente_id = c.id
-    JOIN productos p ON v.producto_id = p.id;
+    	FROM ventas v
+    	JOIN clientes c ON v.cliente_id = c.id
+    	JOIN productos p ON v.producto_id = p.id;
 ```
 SELECT * FROM ventas_detalladas;
 
