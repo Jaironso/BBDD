@@ -339,7 +339,53 @@ SELECT * FROM ventas_detalladas;
 <details>
 <summary>Respuesta</summary>
 
+```
+DELIMITER //
+DROP PROCEDURE IF EXISTS resumen_cliente //
+CREATE PROCEDURE resumen_cliente (
+    id_de_cliente INT,
+    fecha_inicio DATE,
+    fecha_fin DATE
+	)
 
+BEGIN
+	
+    DECLARE cliente_existe INT;
+
+    SELECT COUNT(*)
+    INTO cliente_existe
+    FROM clientes
+    WHERE id = id_de_cliente;
+
+
+	IF cliente_existe = 0 THEN
+
+	        SELECT 'El cliente no existe' AS Error_Message;
+    
+	ELSE
+	        SELECT 
+		c.nombre AS Nombre_Cliente,
+		v.fecha AS Fecha_Venta,
+		p.nombre AS Nombre_Producto,
+		v.cantidad AS Q_comprada,
+		calcular_total(v.id) AS Total_Venta
+	    	FROM ventas v
+	    	JOIN clientes c ON v.cliente_id =  c.id
+	    	JOIN productos p ON v.producto_id = p.id
+	    	WHERE v.cliente_id = id_de_cliente
+	        AND v.fecha BETWEEN fecha_inicio AND fecha_fin;
+	END IF;
+    
+END //
+    
+DELIMITER ;
+```
+
+CALL resumen_cliente(8, '2024-05-01', '2024-05-01');
+
+| Error_Message        |
+|----------------------|
+| El cliente no existe |
 
 </details>
 
