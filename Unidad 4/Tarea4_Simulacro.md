@@ -126,6 +126,18 @@ AND p.departamento = 'Informatica';
 <details>
 <summary>Respuesta</summary>
 
+```
+SELECT
+e.nombre AS Nombre_Estudiante,
+e.ciudad AS Nombre_Ciudad 
+FROM estudiantes e
+WHERE ciudad = 'Madrid';
+```
+| Nombre_Estudiante | Nombre_Ciudad |
+|--------------------|----------------|
+| Maria Lopez        | Madrid         |
+
+
 </details>
 
 3. Mostrar los cursos con más de 5 créditos.
@@ -133,20 +145,32 @@ AND p.departamento = 'Informatica';
 <details>
 <summary>Respuesta</summary>
 
+```
+SELECT * FROM cursos
+WHERE cursos.creditos > 5;
+```
+| id | nombre            | profesor_id | creditos |
+|----|-------------------|-------------|----------|
+| 1  | Algebra Lineal    | 1           | 6        |
+| 3  | Mecanica Clasica  | 3           | 6        |
+| 5  | Calculo I         | 1           | 6        |
+
 </details>
 
 4. Ver las matrículas realizadas después del año 2022.
 
 <details>
 <summary>Respuesta</summary>
-
+```
+```
 </details>
 
 5. Ver los cursos impartidos por la profesora “Dra. Ana Torres”
 
 <details>
 <summary>Respuesta</summary>
-
+```
+```
 </details>
 
 
@@ -158,13 +182,13 @@ AND p.departamento = 'Informatica';
 <summary>Respuesta</summary>
   
 ```
-SELECT
-  p.nombre AS Nombre_Profesor,
-  c.nombre AS Nombre_Curso, 
-  p.departamento AS Nombre_Dpto
-FROM profesores p, cursos c
-WHERE c.profesor_id = p.id
-AND p.departamento = 'Informatica';
+SELECT 
+  	p.nombre AS Nombre_Profesor, 
+    c.nombre AS Nombre_Curso, 
+    p.departamento AS Nombre_Dpto
+FROM cursos c
+JOIN profesores p ON c.profesor_id = p.id
+WHERE p.departamento = 'Informatica';
 ```
 
 | Nombre_Profesor  | Nombre_Curso           | Nombre_Dpto |
@@ -179,12 +203,39 @@ AND p.departamento = 'Informatica';
 <details>
 <summary>Respuesta</summary>
 
+```
+NO ES POSIBLE HACER UN JOIN EN ESTA CONSULTA, SOLO UNA TABLA.
+
+SELECT
+e.nombre AS Nombre_Estudiante,
+e.ciudad AS Nombre_Ciudad 
+FROM estudiantes e
+WHERE ciudad = 'Madrid';
+
+```
+| Nombre_Estudiante | Nombre_Ciudad |
+|--------------------|----------------|
+| Maria Lopez        | Madrid         |
+
 </details>
 
 3. Mostrar los cursos con más de 5 créditos.
 
 <details>
 <summary>Respuesta</summary>
+
+
+```
+NO ES POSIBLE HACER UN JOIN EN ESTA CONSULTA, SOLO UNA TABLA.
+
+SELECT * FROM cursos
+WHERE cursos.creditos > 5;
+```
+| id | nombre            | profesor_id | creditos |
+|----|-------------------|-------------|----------|
+| 1  | Algebra Lineal    | 1           | 6        |
+| 3  | Mecanica Clasica  | 3           | 6        |
+| 5  | Calculo I         | 1           | 6        |
 
 </details>
 
