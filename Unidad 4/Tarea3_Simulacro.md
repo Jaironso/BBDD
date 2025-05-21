@@ -279,7 +279,16 @@ CALL resumen_cliente(1, '2024-05-01', '2024-05-31');
 <details>
 <summary>Respuesta</summary>
 
+CREATE INDEX idx_producto_id ON ventas(producto_id);
 
+SHOW INDEX FROM ventas;
+
+| Table  | Non_unique | Key_name       | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
+|--------|------------|----------------|--------------|--------------|-----------|--------------|-----------|--------|------|-------------|---------|----------------|---------|-------------|
+| ventas | 0          | PRIMARY        | 1            | id           | A         | 4            | NULL      | NULL   |      | BTREE       | YES     | NULL           |         | NULL        |
+| ventas | 1          | cliente_id     | 1            | cliente_id   | A         | 3            | NULL      | NULL   | YES  | BTREE       | YES     | NULL           |         | NULL        |
+| ventas | 1          | idx_fecha      | 1            | fecha        | A         | 4            | NULL      | NULL   | YES  | BTREE       | YES     | NULL           |         | NULL        |
+| ventas | 1          | idx_producto_id| 1            | producto_id  | A         | 3            | NULL      | NULL   | YES  | BTREE       | YES     | NULL           |         | NULL        |
 
 </details>
 
