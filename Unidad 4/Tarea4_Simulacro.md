@@ -162,7 +162,15 @@ WHERE cursos.creditos > 5;
 <details>
 <summary>Respuesta</summary>
 ```
+SELECT * FROM matriculas
+WHERE fecha > '2022-12-31';
 ```
+| id | estudiante_id | curso_id | fecha       |
+|----|---------------|----------|-------------|
+| 3  | 3             | 3        | 2023-09-02  |
+| 4  | 4             | 4        | 2024-09-03  |
+| 7  | 3             | 1        | 2023-09-06  |
+| 8  | 4             | 2        | 2024-09-06  |
 </details>
 
 5. Ver los cursos impartidos por la profesora “Dra. Ana Torres”
@@ -170,7 +178,17 @@ WHERE cursos.creditos > 5;
 <details>
 <summary>Respuesta</summary>
 ```
+SELECT
+  	p.nombre AS Nombre_Profesor, 
+    c.nombre AS Nombre_Curso 
+FROM cursos c, profesores p
+WHERE c.profesor_id = p.id
+AND p.nombre = 'Dra. Ana Torres';
 ```
+| Nombre_Profesor   | Nombre_Curso   |
+|-------------------|----------------|
+| Dra. Ana Torres   | Algebra Lineal |
+| Dra. Ana Torres   | Calculo I      |
 </details>
 
 
@@ -243,6 +261,16 @@ WHERE cursos.creditos > 5;
 
 <details>
 <summary>Respuesta</summary>
+```
+SELECT * FROM matriculas
+WHERE fecha > '2022-12-31';
+```
+| id | estudiante_id | curso_id | fecha       |
+|----|---------------|----------|-------------|
+| 3  | 3             | 3        | 2023-09-02  |
+| 4  | 4             | 4        | 2024-09-03  |
+| 7  | 3             | 1        | 2023-09-06  |
+| 8  | 4             | 2        | 2024-09-06  |
 
 </details>
 
@@ -250,6 +278,18 @@ WHERE cursos.creditos > 5;
 
 <details>
 <summary>Respuesta</summary>
+```
+SELECT
+  	p.nombre AS Nombre_Profesor, 
+    c.nombre AS Nombre_Curso 
+FROM cursos c
+JOIN profesores p ON c.profesor_id = p.id
+WHERE p.nombre = 'Dra. Ana Torres';
+```
+| Nombre_Profesor   | Nombre_Curso   |
+|-------------------|----------------|
+| Dra. Ana Torres   | Algebra Lineal |
+| Dra. Ana Torres   | Calculo I      |
 
 </details>
 
