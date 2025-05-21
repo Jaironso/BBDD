@@ -181,8 +181,8 @@ WHERE fecha > '2022-12-31';
 <summary>Respuesta</summary>
 ```
 SELECT
-  	p.nombre AS Nombre_Profesor, 
-    c.nombre AS Nombre_Curso 
+  	p.nombre AS Nombre_Profesor,
+    c.nombre AS Nombre_Curso
 FROM cursos c, profesores p
 WHERE c.profesor_id = p.id
 AND p.nombre = 'Dra. Ana Torres';
