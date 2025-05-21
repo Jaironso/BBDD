@@ -13,12 +13,31 @@
 <details>
 <summary>Respuesta</summary>
 
+SELECT * FROM `cursos`;
+
+| id | nombre               | profesor_id | creditos |
+|----|----------------------|-------------|----------|
+| 1  | Álgebra Lineal       | 1           | 6        |
+| 2  | Programación I       | 2           | 5        |
+| 3  | Mecánica Clásica     | 3           | 6        |
+| 4  | Estructuras de Datos | 2           | 5        |
+| 5  | Cálculo I            | 1           | 6        |
+
 </details>
 
 2. Mostrar el nombre de todos los profesores.
 
 <details>
 <summary>Respuesta</summary>
+
+SELECT nombre FROM `profesores`;
+
+| nombre           |
+|------------------|
+| Dra. Ana Torres  |
+| Dr. Luis Gmez    |
+| Dra. Marta Daz   |
+
 
 </details>
 
@@ -28,6 +47,19 @@
 <details>
 <summary>Respuesta</summary>
 
+SELECT * FROM `matriculas`;
+
+| id | estudiante_id | curso_id | fecha       |
+|----|---------------|----------|-------------|
+| 1  | 1             | 1        | 2021-09-01  |
+| 2  | 2             | 2        | 2022-09-01  |
+| 3  | 3             | 3        | 2023-09-02  |
+| 4  | 4             | 4        | 2024-09-03  |
+| 5  | 1             | 5        | 2020-09-04  |
+| 6  | 2             | 4        | 2022-09-05  |
+| 7  | 3             | 1        | 2023-09-06  |
+| 8  | 4             | 2        | 2024-09-06  |
+
 </details>
 
 
@@ -35,6 +67,15 @@
 
 <details>
 <summary>Respuesta</summary>
+
+SELECT nombre, email FROM estudiantes;
+
+| nombre         | email          |
+|----------------|----------------|
+| Mara Lpez      | maria@uni.edu  |
+| Juan Prez      | juan@uni.edu   |
+| Luca Fernndez  | lucia@uni.edu  |
+| Carlos Ruiz    | carlos@uni.edu |
 
 </details>
 
@@ -44,6 +85,16 @@
 <details>
 <summary>Respuesta</summary>
 
+SELECT nombre, creditos FROM cursos;
+
+| nombre               | creditos |
+|----------------------|----------|
+| Algebra Lineal        | 6        |
+| Programacion I        | 5        |
+| Mecanica Clasica      | 6        |
+| Estructuras de Datos  | 5        |
+| Calculo I             | 6        |
+
 </details>
 
 ### Consultas WHERE.
@@ -52,6 +103,21 @@
 
 <details>
 <summary>Respuesta</summary>
+
+```
+SELECT 
+  	p.nombre AS Nombre_Profesor, 
+    c.nombre AS Nombre_Curso, 
+    p.departamento AS Nombre_Dpto
+FROM profesores p, cursos c
+WHERE c.profesor_id = p.id
+AND p.departamento = 'Informatica';
+```
+
+| Nombre_Profesor  | Nombre_Curso           | Nombre_Dpto |
+|------------------|------------------------|--------------|
+| Dr. Luis Gomez   | Programacion I         | Informatica  |
+| Dr. Luis Gomez   | Estructuras de Datos   | Informatica  |
 
 </details>
 
