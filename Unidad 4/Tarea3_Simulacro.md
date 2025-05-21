@@ -100,7 +100,7 @@ SELECT * FROM ventas_detalladas;
 
 </details>
 
-## Parte 4: Crear una función.
+## Parte 4: Creación de una función.
 
 <details>
 <summary>Respuesta</summary>
@@ -131,7 +131,7 @@ SELECT calcular_total(1);
 
 </details>
 
-## Parte 5: Crear un procedimiento.
+## Parte 5: Creación de un procedimiento.
 
 <details>
 <summary>Respuesta</summary>
@@ -165,6 +165,70 @@ CALL resumen_cliente(1);
 
 ## Preguntas teoricas.
 
+#### ¿Qué ventajas ofrece el uso de una vista en lugar de una consulta con múltiples JOIN?
+
+<details>
+<summary>Respuesta</summary>
+
+- Encapsula una búsqueda compleja y reutilizable.
+- Permiten limitar el acceso a la información de ciertas columnas.
+- Las vistas hacen que todos los usuarios conectados a la BBDD accedan a la misma información.
+
+</details>
+
+#### ¿Por qué es importante declarar una función como DETERMINISTIC?
+
+<details>
+<summary>Respuesta</summary>
+
+- Por optiminzación, ayuda que la función sepa si va a devolver los mismos valores de resultado.
+- Ayuda a conocer si la función depende de factores externos (tiempo u otras tablas).
+
+</details>
+
+#### ¿Cuál es la diferencia entre una función y un procedimiento?
+
+<details>
+<summary>Respuesta</summary>
+
+- Las funciones retornan un valor, mientras que los procedimientos no necesariamente.
+- Las funciones pueden usarse dentro de consultas, los procedimientos no.
+- Las llamadas son diferentes, SELECT y CALL.
+- Generalmente se usan con propósitos diferentes, funciones para calcular y devolver cierto valor, mientras que los procedimientos se encargan de ejecutar un conjunto de acciones.
+
+</details>
+
+#### ¿Qué impacto tienen los índices sobre el rendimiento de una base de datos?
+
+<details>
+<summary>Respuesta</summary>
+
+Ventajas: 
+ 
+ - Aceleran las búsquedas evitando escaneos completos de tablas.
+ - Mejoran el rendimiento en consultas frecuentes.
+
+Desventajas:
+
+- Las modificaciones pueden ser más lentas.
+- Un uso excesivo en busquedas poco frecuentes sería negativo para el almacenamiento.
+
+</details>
+
+#### ¿Cuándo se recomienda usar un trigger en lugar de un procedimiento?
+
+<details>
+<summary>Respuesta</summary>
+
+- Para ejecutar logicas de manera automatica cuando ocurre un evento.
+- Auditorias.
+
+</details>
+
+## Preguntas prácticas.
+
+#### Modifica el procedimiento para filtrar también por un rango de fechas.
+
 <details>
 <summary>Respuesta</summary>
 
@@ -172,7 +236,34 @@ CALL resumen_cliente(1);
 
 </details>
 
-## Preguntas prácticas.
+#### Crea un índice sobre la columna producto_id en la tabla ventas.
+
+<details>
+<summary>Respuesta</summary>
+
+
+
+</details>
+
+#### ¿Qué ocurre si insertas una venta con un cliente_id inexistente?
+
+<details>
+<summary>Respuesta</summary>
+
+
+
+</details>
+
+#### Modifica la vista para incluir también el nombre de la ciudad del cliente.
+
+<details>
+<summary>Respuesta</summary>
+
+
+
+</details>
+
+#### Agrega una validación en el procedimiento para evitar resultados si el cliente no existe.
 
 <details>
 <summary>Respuesta</summary>
