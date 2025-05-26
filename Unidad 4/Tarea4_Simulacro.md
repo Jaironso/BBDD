@@ -418,6 +418,10 @@ WHERE profesor_id IN
 <details>
 <summary>Respuesta</summary>
 
+```
+CREATE INDEX idx_ciudad ON estudiantes(ciudad);
+```
+
 </details>
 
 2. Crear un índice en la columna departamento de la tabla profesores.
@@ -425,6 +429,9 @@ WHERE profesor_id IN
 <details>
 <summary>Respuesta</summary>
 
+```
+CREATE INDEX idx_dpto ON profesores(departamento);
+```
 </details>
 
 3. Consultar los índices creados.
@@ -432,12 +439,47 @@ WHERE profesor_id IN
 <details>
 <summary>Respuesta</summary>
 
+```
+SHOW INDEX FROM `estudiantes`;
+```
+
+| Tabla      | Seq_in_index | Nombre_indice | Columna | Orden | Longitud | Nulo | Tipo_indice | Único | Comentario |
+|------------|--------------|----------------|---------|-------|----------|------|--------------|--------|-------------|
+| estudiantes | 0            | PRIMARY        | id      | A     | 4        | NULL | BTREE        | YES    | NULL        |
+| estudiantes | 1            | idx_ciudad     | ciudad  | A     | 4        | YES  | BTREE        | YES    | NULL        |
+
+```
+SHOW INDEX FROM `profesores`;
+```
+
+| Tabla      | Seq_in_index | Nombre_indice | Columna      | Orden | Longitud | Nulo | Tipo_indice | Único | Comentario |
+|------------|---------------|----------------|--------------|-------|----------|------|--------------|--------|-------------|
+| profesores | 0             | PRIMARY        | id           | A     | 3        | NULL | BTREE        | YES    | NULL        |
+| profesores | 1             | idx_dpto       | departamento | A     | 3        | NULL | BTREE        | YES    | NULL        |
+
+
 </details>
 
 4. Eliminar ambos índices.
 
 <details>
 <summary>Respuesta</summary>
+
+```
+DROP INDEX idx_ciudad ON `estudiantes`;
+```
+
+| Tabla      | Seq_in_index | Nombre_indice | Columna | Orden | Longitud | Nulo | Tipo_indice | Único | Comentario |
+|------------|--------------|----------------|---------|-------|----------|------|--------------|--------|-------------|
+| estudiantes | 0            | PRIMARY        | id      | A     | 4        | NULL | BTREE        | YES    | NULL        |
+
+```
+DROP INDEX idx_dpto ON `profesores`;
+```
+
+| Tabla      | Seq_in_index | Nombre_indice | Columna      | Orden | Longitud | Nulo | Tipo_indice | Único | Comentario |
+|------------|---------------|----------------|--------------|-------|----------|------|--------------|--------|-------------|
+| profesores | 0             | PRIMARY        | id           | A     | 3        | NULL | BTREE        | YES    | NULL        |
 
 </details>
 
