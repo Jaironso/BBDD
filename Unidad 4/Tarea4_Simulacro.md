@@ -637,7 +637,7 @@ BEGIN
    
 	RETURN (Num_Creditos_Matriculados);
 
-END;
+END //
 DELIMITER ; 
 ```
 
