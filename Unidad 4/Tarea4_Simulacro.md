@@ -573,7 +573,7 @@ BEGIN
 		c.creditos
 		FROM cursos c 
 		JOIN profesores p ON c.profesor_id = p.id
-		WHERE p.nombre = Nombre_Profesor
+		WHERE p.nombre = Nombre_Profesor;
     
 END //
 
@@ -613,6 +613,34 @@ DROP PROCEDURE `cursos_por_profesor`;
 <details>
 <summary>Respuesta</summary>
 
+```
+DELIMITER //
+
+DROP FUNCTION IF EXISTS total_creditos_estudiante //
+    
+CREATE FUNCTION total_creditos_estudiante (id_estudiante INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN 
+	DECLARE Num_Creditos_Matriculados INT;
+    
+	SELECT 
+		SUM(c.creditos)
+	INTO
+    		Num_Creditos_Matriculados
+	FROM 
+    		matriculas m
+	JOIN 
+    		cursos c ON c.id = m.curso_id
+	WHERE 
+		m.estudiante_id = id_estudiante;
+   
+	RETURN (Num_Creditos_Matriculados);
+
+END;
+DELIMITER ; 
+```
+
 </details>
 
 2. Ejecutar la función para un estudiante específico.
@@ -620,12 +648,21 @@ DROP PROCEDURE `cursos_por_profesor`;
 <details>
 <summary>Respuesta</summary>
 
+SELECT `total_creditos_estudiante(1)`;
+
+| total_creditos_estudiante(1) |
+|------------------------------|
+| 12                           |
+
+
 </details>
 
 3. Eliminar la función.
 
 <details>
 <summary>Respuesta</summary>
+
+DROP FUNCTION `total_creditos_estudiante`;
 
 </details>
 
