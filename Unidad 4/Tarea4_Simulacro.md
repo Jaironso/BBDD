@@ -207,10 +207,10 @@ AND p.nombre = 'Dra. Ana Torres';
 <summary>Respuesta</summary>
   
 ```
-SELECT 
-  	p.nombre AS Nombre_Profesor, 
-    c.nombre AS Nombre_Curso, 
-    p.departamento AS Nombre_Dpto
+SELECT
+  p.nombre AS Nombre_Profesor, 
+  c.nombre AS Nombre_Curso, 
+  p.departamento AS Nombre_Dpto
 FROM cursos c
 JOIN profesores p ON c.profesor_id = p.id
 WHERE p.departamento = 'Informatica';
@@ -312,12 +312,40 @@ WHERE p.nombre = 'Dra. Ana Torres';
 <details>
 <summary>Respuesta</summary>
 
+```
+SELECT
+  (SELECT	p.nombre FROM profesores p WHERE p.id = c.profesor_id) AS Nombre_Profesor,
+  c.nombre AS Nombre_Curso,
+  (SELECT	p.departamento FROM profesores p WHERE p.id = c.profesor_id) AS Nombre_Dpto
+FROM cursos c WHERE profesor_id IN
+	(SELECT id FROM profesores
+	WHERE departamento = 'Informatica');
+```
+| Nombre_Profesor  | Nombre_Curso           | Nombre_Dpto |
+|------------------|------------------------|--------------|
+| Dr. Luis Gomez   | Programacion I         | Informatica  |
+| Dr. Luis Gomez   | Estructuras de Datos   | Informatica  |
+
+
+
 </details>
 
 2. Obtener los estudiantes que viven en Madrid.
 
 <details>
 <summary>Respuesta</summary>
+
+```
+SELECT * FROM estudiantes e
+WHERE e.ciudad = 
+	(SELECT ciudad FROM estudiantes 
+     WHERE ciudad = 'Madrid');
+```
+
+| id | nombre       | email          | ciudad |
+|----|--------------|----------------|--------|
+| 1  | Maria Lopez  | maria@uni.edu  | Madrid |
+
 
 </details>
 
@@ -326,6 +354,19 @@ WHERE p.nombre = 'Dra. Ana Torres';
 <details>
 <summary>Respuesta</summary>
 
+```
+SELECT * FROM cursos c WHERE c.id IN
+	(SELECT c.id FROM cursos c WHERE c.creditos > 5);
+```
+
+| id | nombre           | profesor_id | creditos |
+|----|------------------|-------------|----------|
+| 1  | Algebra Lineal   | 1           | 6        |
+| 3  | Mecanica Clasica | 3           | 6        |
+| 5  | Calculo I        | 1           | 6        |
+
+
+
 </details>
 
 4. Ver las matrículas realizadas después del año 2022.
@@ -333,12 +374,40 @@ WHERE p.nombre = 'Dra. Ana Torres';
 <details>
 <summary>Respuesta</summary>
 
+```
+SELECT * FROM matriculas m WHERE m.id IN 
+	(SELECT m.id FROM matriculas m 
+    WHERE m.fecha > '2022-12-31');
+```
+
+| id | estudiante_id | curso_id | fecha       |
+|----|---------------|----------|-------------|
+| 3  | 3             | 3        | 2023-09-02  |
+| 4  | 4             | 4        | 2024-09-03  |
+| 7  | 3             | 1        | 2023-09-06  |
+| 8  | 4             | 2        | 2024-09-06  |
+
 </details>
 
 5. Ver los cursos impartidos por la profesora “Dra. Ana Torres”.
 
 <details>
 <summary>Respuesta</summary>
+
+```
+SELECT c.*, 
+	(SELECT p.nombre FROM profesores p WHERE p.id = c.profesor_id) AS Nombre_Profesor
+FROM cursos c
+WHERE profesor_id IN 
+  (SELECT p.id FROM profesores p 
+  WHERE p.nombre = 'Dra. Ana Torres');
+```
+
+| id | nombre         | profesor_id | creditos | Nombre_Profesor  |
+|----|----------------|-------------|----------|------------------|
+| 1  | Algebra Lineal | 1           | 6        | Dra. Ana Torres  |
+| 5  | Calculo I      | 1           | 6        | Dra. Ana Torres  |
+
 
 </details>
 
