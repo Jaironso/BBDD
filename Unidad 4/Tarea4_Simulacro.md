@@ -559,6 +559,28 @@ DROP VIEW `vista_matriculas_completas`;
 <details>
 <summary>Respuesta</summary>
 
+```
+DELIMITER //
+
+DROP PROCEDURE IF EXISTS cursos_por_profesor //
+CREATE PROCEDURE cursos_por_profesor 
+	(IN Nombre_Profesor VARCHAR(100),
+    OUT Cursos_Impartidos TEXT, 
+    OUT Num_Creditos INT)
+
+BEGIN
+
+	SELECT 
+		c.nombre,
+		c.creditos
+		FROM cursos c 
+		JOIN profesores p ON c.profesor_id = p.id
+		WHERE p.nombre = Nombre_Profesor
+    
+END //
+
+DELIMITER ; 
+```
 </details>
 
 2. Ejecutar el procedimiento con el nombre “Dr. Luis Gómez”.
@@ -566,12 +588,23 @@ DROP VIEW `vista_matriculas_completas`;
 <details>
 <summary>Respuesta</summary>
 
+CALL cursos_por_profesor('Dr. Luis Gomez');
+
+| nombre               | creditos |
+|----------------------|----------|
+| Programacion I       | 5        |
+| Estructuras de Datos | 5        |
+
+
 </details>
 
 3. Eliminar el procedimiento.
 
 <details>
 <summary>Respuesta</summary>
+
+DROP PROCEDURE `cursos_por_profesor`;
+
 
 </details>
 
