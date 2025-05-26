@@ -494,6 +494,19 @@ DROP INDEX idx_dpto ON `profesores`;
 <details>
 <summary>Respuesta</summary>
 
+```
+CREATE VIEW vista_matriculas_completas AS
+	SELECT
+	e.nombre AS Nombre_Estudiante,
+	c.nombre AS Nombre_Curso,
+	m.fecha AS Fecha_Matricula
+	FROM matriculas m 
+	JOIN estudiantes e ON m.estudiante_id = e.id
+	JOIN cursos c ON m.curso_id = c.id;
+```
+
+
+
 </details>
 
 2. Consultar datos desde la vista, mostrando el nombre del estudiante y la fecha de matrícula.
