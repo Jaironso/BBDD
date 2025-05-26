@@ -564,9 +564,7 @@ DELIMITER //
 
 DROP PROCEDURE IF EXISTS cursos_por_profesor //
 CREATE PROCEDURE cursos_por_profesor 
-	(IN Nombre_Profesor VARCHAR(100),
-    OUT Cursos_Impartidos TEXT, 
-    OUT Num_Creditos INT)
+	(IN Nombre_Profesor VARCHAR(100))
 
 BEGIN
 
