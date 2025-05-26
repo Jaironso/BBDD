@@ -128,11 +128,12 @@ AND p.departamento = 'Informatica';
 
 ```
 SELECT
-e.nombre AS Nombre_Estudiante,
-e.ciudad AS Nombre_Ciudad 
+  e.nombre AS Nombre_Estudiante,
+  e.ciudad AS Nombre_Ciudad 
 FROM estudiantes e
 WHERE ciudad = 'Madrid';
 ```
+
 | Nombre_Estudiante | Nombre_Ciudad |
 |--------------------|----------------|
 | Maria Lopez        | Madrid         |
@@ -162,6 +163,7 @@ WHERE cursos.creditos > 5;
 
 <details>
 <summary>Respuesta</summary>
+
 ```
 SELECT * FROM matriculas
 WHERE fecha > '2022-12-31';
@@ -179,10 +181,11 @@ WHERE fecha > '2022-12-31';
 
 <details>
 <summary>Respuesta</summary>
+
 ```
 SELECT
-  	p.nombre AS Nombre_Profesor,
-    c.nombre AS Nombre_Curso
+  p.nombre AS Nombre_Profesor,
+  c.nombre AS Nombre_Curso
 FROM cursos c, profesores p
 WHERE c.profesor_id = p.id
 AND p.nombre = 'Dra. Ana Torres';
@@ -229,12 +232,12 @@ WHERE p.departamento = 'Informatica';
 NO ES POSIBLE HACER UN JOIN EN ESTA CONSULTA, SOLO UNA TABLA.
 
 SELECT
-e.nombre AS Nombre_Estudiante,
-e.ciudad AS Nombre_Ciudad 
+  e.nombre AS Nombre_Estudiante,
+  e.ciudad AS Nombre_Ciudad 
 FROM estudiantes e
 WHERE ciudad = 'Madrid';
-
 ```
+
 | Nombre_Estudiante | Nombre_Ciudad |
 |--------------------|----------------|
 | Maria Lopez        | Madrid         |
@@ -266,6 +269,7 @@ WHERE cursos.creditos > 5;
 
 <details>
 <summary>Respuesta</summary>
+
 ```
 SELECT * FROM matriculas
 WHERE fecha > '2022-12-31';
@@ -284,10 +288,11 @@ WHERE fecha > '2022-12-31';
 
 <details>
 <summary>Respuesta</summary>
+
 ```
 SELECT
-  	p.nombre AS Nombre_Profesor, 
-    c.nombre AS Nombre_Curso 
+  p.nombre AS Nombre_Profesor,
+  c.nombre AS Nombre_Curso 
 FROM cursos c
 JOIN profesores p ON c.profesor_id = p.id
 WHERE p.nombre = 'Dra. Ana Torres';
