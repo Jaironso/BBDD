@@ -505,6 +505,18 @@ CREATE VIEW vista_matriculas_completas AS
 	JOIN cursos c ON m.curso_id = c.id;
 ```
 
+SELECT * FROM `vista_matriculas_completas`;
+
+| Nombre_Estudiante | Nombre_Curso          | Fecha_Matricula |
+|--------------------|------------------------|------------------|
+| Maria Lopez        | Algebra Lineal         | 2021-09-01       |
+| Maria Lopez        | Calculo I              | 2020-09-04       |
+| Juan Perez         | Programacion I         | 2022-09-01       |
+| Juan Perez         | Estructuras de Datos   | 2022-09-05       |
+| Lucia Fernandez    | Mecanica Clasica       | 2023-09-02       |
+| Lucia Fernandez    | Algebra Lineal         | 2023-09-06       |
+| Carlos Ruiz        | Estructuras de Datos   | 2024-09-03       |
+| Carlos Ruiz        | Programacion I         | 2024-09-06       |
 
 
 </details>
@@ -514,12 +526,29 @@ CREATE VIEW vista_matriculas_completas AS
 <details>
 <summary>Respuesta</summary>
 
+```
+SELECT Nombre_Estudiante, Fecha_Matricula FROM vista_matriculas_completas;
+```
+
+| Nombre_Estudiante | Fecha_Matricula |
+|--------------------|------------------|
+| Maria Lopez        | 2021-09-01       |
+| Maria Lopez        | 2020-09-04       |
+| Juan Perez         | 2022-09-01       |
+| Juan Perez         | 2022-09-05       |
+| Lucia Fernandez    | 2023-09-02       |
+| Lucia Fernandez    | 2023-09-06       |
+| Carlos Ruiz        | 2024-09-03       |
+| Carlos Ruiz        | 2024-09-06       |
+
 </details>
 
 3. Eliminar la vista.
 
 <details>
 <summary>Respuesta</summary>
+
+DROP VIEW `vista_matriculas_completas`;
 
 </details>
 
