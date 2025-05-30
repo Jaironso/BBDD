@@ -13,8 +13,16 @@
 <details>
 <summary>Respuesta</summary>
 
+```sql
+SELECT * FROM estudiantes;
 ```
-```
+| id |     nombre       |        email        |  ciudad   |
+|----|------------------|---------------------|-----------|
+| 1  | Maria Lopez      | maria@uni.edu       | Madrid    |
+| 2  | Juan Perez       | juan@uni.edu        | Barcelona |
+| 3  | Lucia Fernandez  | lucia@uni.edu       | Valencia  |
+| 4  | Carlos Ruiz      | carlos@uni.edu      | Sevilla   |
+
 
 
 </details>
@@ -24,9 +32,16 @@
 <details>
 <summary>Respuesta</summary>
 
+```sql
+SELECT * FROM cursos;
 ```
-```
-
+| id |        nombre         | profesor_id | creditos |
+|----|------------------------|-------------|----------|
+| 1  | Algebra Lineal        | 1           | 6        |
+| 2  | Programacion I        | 2           | 5        |
+| 3  | Mecanica Clasica      | 3           | 6        |
+| 4  | Estructuras de Datos  | 2           | 5        |
+| 5  | Calculo I             | 1           | 6        |
 
 </details>
 
@@ -35,8 +50,20 @@
 <details>
 <summary>Respuesta</summary>
 
+```sql
+SELECT * FROM matriculas;
 ```
-```
+
+| id | estudiante_id | curso_id |   fecha     |
+|----|---------------|----------|-------------|
+| 1  | 1             | 1        | 2021-09-01  |
+| 2  | 2             | 2        | 2022-09-01  |
+| 3  | 3             | 3        | 2023-09-02  |
+| 4  | 4             | 4        | 2024-09-03  |
+| 5  | 1             | 5        | 2020-09-04  |
+| 6  | 2             | 4        | 2022-09-05  |
+| 7  | 3             | 1        | 2023-09-06  |
+| 8  | 4             | 2        | 2024-09-06  |
 
 
 </details>
@@ -49,8 +76,25 @@
 <details>
 <summary>Respuesta</summary>
 
+```sql
+SELECT 
+	  e.*,
+    COUNT(m.estudiante_id) AS Q_cursos
+FROM
+	  estudiantes e
+JOIN 
+	  matriculas m
+ON 
+	  m.estudiante_id = e.id
+GROUP BY
+	  e.id;
 ```
-```
+| id |     nombre       |       email        |  ciudad   | Q_cursos |
+|----|------------------|--------------------|-----------|----------|
+| 1  | Maria Lopez      | maria@uni.edu      | Madrid    |    2     |
+| 2  | Juan Perez       | juan@uni.edu       | Barcelona |    2     |
+| 3  | Lucia Fernandez  | lucia@uni.edu      | Valencia  |    2     |
+| 4  | Carlos Ruiz      | carlos@uni.edu     | Sevilla   |    2     |
 
 
 </details>
@@ -61,9 +105,20 @@
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+SELECT e.*, SUM(c.creditos) AS Q_creditos
+FROM estudiantes e
+JOIN matriculas m ON m.estudiante_id = e.id
+JOIN cursos c ON c.id = m.curso_id
+GROUP BY e.id;
 ```
 
+| id |     nombre       |       email        |  ciudad   | Q_creditos |
+|----|------------------|--------------------|-----------|------------|
+| 1  | Maria Lopez      | maria@uni.edu      | Madrid    |     12     |
+| 2  | Juan Perez       | juan@uni.edu       | Barcelona |     10     |
+| 3  | Lucia Fernandez  | lucia@uni.edu      | Valencia  |     12     |
+| 4  | Carlos Ruiz      | carlos@uni.edu     | Sevilla   |     10     |
 
 </details>
 
@@ -72,9 +127,21 @@
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+SELECT c.*, COUNT(e.id) 
+FROM matriculas m, cursos c, estudiantes e
+WHERE m.curso_id = c.id 
+AND m.estudiante_id = e.id
+GROUP BY c.id;
 ```
 
+| id |        nombre         | profesor_id | creditos | COUNT(e.id) |
+|----|------------------------|-------------|----------|-------------|
+| 1  | Algebra Lineal        | 1           | 6        |      2      |
+| 5  | Calculo I             | 1           | 6        |      1      |
+| 2  | Programacion I        | 2           | 5        |      2      |
+| 4  | Estructuras de Datos  | 2           | 5        |      2      |
+| 3  | Mecanica Clasica      | 3           | 6        |      1      |
 
 </details>
 
