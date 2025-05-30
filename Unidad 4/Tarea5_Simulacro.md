@@ -126,16 +126,18 @@ SELECT c.*, COUNT(e.id) AS Q_Alumnos
 FROM matriculas m, cursos c, estudiantes e
 WHERE m.curso_id = c.id 
 AND m.estudiante_id = e.id
-GROUP BY c.id;
+GROUP BY c.id
+ORDER BY Q_Alumnos;
 ```
 
-| id |        nombre         | profesor_id | creditos | Q_Alumnos    |
-|----|------------------------|-------------|----------|-------------|
-| 1  | Algebra Lineal        | 1           | 6        |      2      |
-| 5  | Calculo I             | 1           | 6        |      1      |
-| 2  | Programacion I        | 2           | 5        |      2      |
-| 4  | Estructuras de Datos  | 2           | 5        |      2      |
-| 3  | Mecanica Clasica      | 3           | 6        |      1      |
+| id |        nombre         | profesor_id | creditos | Q_Alumnos |
+|----|------------------------|-------------|----------|-----------|
+| 1  | Algebra Lineal        | 1           | 6        |     2     |
+| 2  | Programacion I        | 2           | 5        |     2     |
+| 4  | Estructuras de Datos  | 2           | 5        |     2     |
+| 5  | Calculo I             | 1           | 6        |     1     |
+| 3  | Mecanica Clasica      | 3           | 6        |     1     |
+
 
 </details>
 
