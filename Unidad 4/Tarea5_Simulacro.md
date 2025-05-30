@@ -77,17 +77,11 @@ SELECT * FROM matriculas;
 <summary>Respuesta</summary>
 
 ```sql
-SELECT 
-	  e.*,
-    COUNT(m.estudiante_id) AS Q_cursos
-FROM
-	  estudiantes e
-JOIN 
-	  matriculas m
-ON 
-	  m.estudiante_id = e.id
-GROUP BY
-	  e.id;
+SELECT e.*, COUNT(m.estudiante_id) AS Q_cursos
+FROM estudiantes e
+JOIN matriculas m
+ON m.estudiante_id = e.id
+GROUP BY e.id;
 ```
 | id |     nombre       |       email        |  ciudad   | Q_cursos |
 |----|------------------|--------------------|-----------|----------|
@@ -128,14 +122,14 @@ GROUP BY e.id;
 <summary>Respuesta</summary>
 
 ```sql
-SELECT c.*, COUNT(e.id) 
+SELECT c.*, COUNT(e.id) AS Q_Alumnos 
 FROM matriculas m, cursos c, estudiantes e
 WHERE m.curso_id = c.id 
 AND m.estudiante_id = e.id
 GROUP BY c.id;
 ```
 
-| id |        nombre         | profesor_id | creditos | COUNT(e.id) |
+| id |        nombre         | profesor_id | creditos | Q_Alumnos    |
 |----|------------------------|-------------|----------|-------------|
 | 1  | Algebra Lineal        | 1           | 6        |      2      |
 | 5  | Calculo I             | 1           | 6        |      1      |
