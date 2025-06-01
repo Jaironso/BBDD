@@ -146,9 +146,19 @@ ORDER BY Q_Alumnos;
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+SELECT c.*, AVG(c.creditos) AS Media_Creditos 
+FROM cursos c
+GROUP BY c.id;
 ```
 
+| id | nombre                | profesor_id | creditos | Media_Creditos |
+|----|------------------------|--------------|-----------|----------------|
+| 1  | Algebra Lineal         | 1            | 6         | 6.0000         |
+| 2  | Programacion I         | 2            | 5         | 5.0000         |
+| 3  | Mecanica Clasica       | 3            | 6         | 6.0000         |
+| 4  | Estructuras de Datos   | 2            | 5         | 5.0000         |
+| 5  | Calculo I              | 1            | 6         | 6.0000         |
 
 </details>
 
@@ -157,9 +167,13 @@ ORDER BY Q_Alumnos;
 <details>
 <summary>Respuesta</summary>
 
+```sql
+SELECT c.* 
+FROM cursos c
+WHERE c.id NOT IN 
+	(SELECT m.id FROM matriculas m);
 ```
-```
-
+Sin Resultados para esta búsqueda.
 
 </details>
 
@@ -168,9 +182,18 @@ ORDER BY Q_Alumnos;
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+SELECT p.*, COUNT(p.id) AS Q_Cursos
+FROM profesores p
+JOIN cursos c ON c.profesor_id = p.id
+GROUP BY p.id;
 ```
 
+| id | nombre           | departamento | Q_Cursos |
+|----|------------------|--------------|----------|
+| 1  | Dra. Ana Torres  | Matematicas  | 2        |
+| 2  | Dr. Luis Gomez   | Informatica  | 2        |
+| 3  | Dra. Marta Diaz  | Fisica       | 1        |
 
 </details>
 
@@ -179,9 +202,14 @@ ORDER BY Q_Alumnos;
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+SELECT p.* 
+FROM profesores p
+WHERE p.id NOT IN
+	(SELECT c.profesor_id FROM cursos c);
 ```
 
+Sin Resultados para está búsqueda.
 
 </details>
 
@@ -190,9 +218,18 @@ ORDER BY Q_Alumnos;
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+SELECT e.ciudad, COUNT(e.id) AS Q_estudiantes
+FROM estudiantes e
+GROUP BY e.ciudad;
 ```
 
+| ciudad     | Q_estudiantes |
+|------------|---------------|
+| Madrid     | 1             |
+| Barcelona  | 1             |
+| Valencia   | 1             |
+| Sevilla    | 1             |
 
 </details>
 
@@ -201,9 +238,19 @@ ORDER BY Q_Alumnos;
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+SELECT e.*, COUNT(m.estudiante_id) Q_Matriculas
+FROM estudiantes e 
+JOIN matriculas m ON e.id = m.estudiante_id
+GROUP BY e.id;
 ```
 
+| id | nombre           | email            | ciudad     | Q_Matriculas |
+|----|------------------|------------------|------------|--------------|
+| 1  | Maria Lopez      | maria@uni.edu    | Madrid     | 2            |
+| 2  | Juan Perez       | juan@uni.edu     | Barcelona  | 2            |
+| 3  | Lucia Fernandez  | lucia@uni.edu    | Valencia   | 2            |
+| 4  | Carlos Ruiz      | carlos@uni.edu   | Sevilla    | 2            |
 
 </details>
 
@@ -212,9 +259,22 @@ ORDER BY Q_Alumnos;
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+SELECT c.*,
+CASE
+  WHEN c.creditos >= 6 THEN 'Alta Carga'
+  ELSE 'Carga Estándar'
+  END AS Clasificacion
+FROM cursos c;
 ```
 
+| id | nombre                | profesor_id | creditos | Clasificacion   |
+|----|------------------------|--------------|-----------|------------------|
+| 1  | Algebra Lineal         | 1            | 6         | Alta Carga       |
+| 2  | Programacion I         | 2            | 5         | Carga Estándar   |
+| 3  | Mecanica Clasica       | 3            | 6         | Alta Carga       |
+| 4  | Estructuras de Datos   | 2            | 5         | Carga Estándar   |
+| 5  | Calculo I              | 1            | 6         | Alta Carga       |
 
 </details>
 
