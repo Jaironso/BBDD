@@ -283,8 +283,25 @@ FROM cursos c;
 <details>
 <summary>Respuesta</summary>
 
+```sql
+SELECT e.*, SUM(c.creditos) AS Total_Creditos,
+CASE
+	WHEN SUM(c.creditos) > 12 THEN 'Carga Alta'
+	WHEN SUM(c.creditos) BETWEEN 6 AND 12 THEN 'Carga Media'
+    	ELSE 'Carga Baja'
+    	END AS Clasificacion
+FROM estudiantes e
+JOIN matriculas m ON m.estudiante_id = e.id
+JOIN cursos c ON m.curso_id = c.id
+GROUP BY e.id;
 ```
-```
+
+| id | nombre           | email             | ciudad     | Total_Creditos | Clasificacion |
+|----|------------------|-------------------|------------|----------------|----------------|
+| 1  | Maria Lopez      | maria@uni.edu     | Madrid     | 12             | Carga Media    |
+| 2  | Juan Perez       | juan@uni.edu      | Barcelona  | 10             | Carga Media    |
+| 3  | Lucia Fernandez  | lucia@uni.edu     | Valencia   | 12             | Carga Media    |
+| 4  | Carlos Ruiz      | carlos@uni.edu    | Sevilla    | 10             | Carga Media    |
 
 
 </details>
@@ -295,8 +312,21 @@ FROM cursos c;
 <details>
 <summary>Respuesta</summary>
 
+```sql
+SELECT c.* FROM cursos c
+WHERE c.id IN 
+	(SELECT m.curso_id 
+     	FROM matriculas m 
+     	WHERE m.estudiante_id IN
+        	(SELECT e.id
+        	FROM estudiantes e
+        	WHERE e.ciudad = 'Sevilla'));
 ```
-```
+
+| id | nombre                | profesor_id | creditos |
+|----|------------------------|--------------|-----------|
+| 4  | Estructuras de Datos   | 2            | 5         |
+| 2  | Programacion I         | 2            | 5         |
 
 
 </details>
