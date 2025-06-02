@@ -516,7 +516,29 @@ DROP PROCEDURE inscribir_estudiante;
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+DELIMITER //
+
+DROP FUNCTION IF EXISTS promedio_creditos_anio //
+
+CREATE FUNCTION promedio_creditos_anio(anio INT)
+RETURNS DECIMAL (15,2)
+DETERMINISTIC
+BEGIN
+	
+    DECLARE promedio DECIMAL (15,2);
+    
+    SELECT AVG(c.creditos) 
+    INTO promedio 
+    FROM cursos c 
+    JOIN matriculas m ON m.curso_id = c.id
+    JOIN estudiantes e ON m.estudiante_id = e.id
+	WHERE YEAR(m.fecha) = anio;
+    RETURN promedio;
+    
+END //
+
+DELIMITER ;
 ```
 
 
@@ -528,7 +550,8 @@ DROP PROCEDURE inscribir_estudiante;
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+SELECT promedio_creditos_anio(2023);
 ```
 
 
@@ -540,7 +563,8 @@ DROP PROCEDURE inscribir_estudiante;
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+DROP FUNCTION promedio_creditos_anio;
 ```
 
 
