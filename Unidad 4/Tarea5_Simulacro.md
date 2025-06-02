@@ -406,7 +406,34 @@ WHERE c.id IN
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+DELIMITER //
+
+DROP PROCEDURE IF EXISTS inscribir_estudiante //
+CREATE PROCEDURE inscribir_estudiante
+	(IN id_estudiante INT,
+     IN id_curso INT,
+     IN fecha_inscripcion DATE)
+     
+BEGIN
+	DECLARE ya_inscrito INT;
+    
+    SELECT COUNT(*) INTO ya_inscrito FROM matriculas m 
+    WHERE m.estudiante_id = id_estudiante
+    AND id_curso = m.curso_id;
+    
+    IF ya_inscrito > 0 THEN
+    	INSERT INTO matriculas(estudiante_id, curso_id, fecha)  
+		VALUES (id_estudiante, id_curso, fecha_inscripcion);
+        
+   	ELSE 
+    	SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'Ya está inscrito en este curso';
+	
+    END IF;
+    
+END //
+DELIMITER ;
 ```
 
 
@@ -417,9 +444,11 @@ WHERE c.id IN
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+CALL inscribir_estudiante(1, 2, CURRENT_DATE);
 ```
 
+'Ya está inscrito en este curso'.
 
 </details>
 
@@ -429,7 +458,8 @@ WHERE c.id IN
 <details>
 <summary>Respuesta</summary>
 
-```
+```sql
+DROP PROCEDURE inscribir_estudiante;
 ```
 
 
